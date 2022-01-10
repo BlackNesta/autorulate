@@ -2,7 +2,13 @@
   .container
     = link_to "autorulate", root_path, id: "logo"
     %nav
-      %ul.nav.navbar-nav.navbar-right
+      .navbar-header
+        %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", type: "button"}
+          %span.sr-only Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+      %ul#bs-example-navbar-collapse-1.nav.navbar-nav.navbar-right.collapse.navbar-collapse
         %li= link_to "Home", root_path
         %li= link_to "Help", help_path
         - if logged_in?
