@@ -29,6 +29,9 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'haml-rails'
 gem 'bcrypt'
+gem 'faker'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record

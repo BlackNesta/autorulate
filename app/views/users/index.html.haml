@@ -1,0 +1,18 @@
+- provide(:title, 'All users')
+%h1 All users
+
+= will_paginate
+
+%ul.users
+  - @users.each do |user|
+    %li
+      = gravatar_for user, size: 50
+      = link_to user.name, user
+      - if current_user.admin? && !current_user?(user)
+        |
+        - if user.banned?
+          = link_to "unban", unban_user_path(user), method: :patch ,confirm: "Are you sureyou want to unban #{user.name}?", style: "color: green;"
+        -else
+          = link_to "ban", ban_user_path(user), method: :patch, confirm: "Are you sureyou want to ban #{user.name}?", style: "color: red;"
+
+= will_paginate
