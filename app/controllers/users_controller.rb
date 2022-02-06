@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:edit, :update, :index, :ban, :unban]
   before_action :correct_user, only: [:edit, :update]
-  before_action :admin_user, only: : [:ban, :unban]
+  before_action :admin_user, only: [:ban, :unban]
 
   def index
-    @users = User.paginate(page: params[:page])
+    @users = User.order(:name).paginate(page: params[:page])
   end
 
   def new

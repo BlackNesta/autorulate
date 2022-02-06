@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_05_105540) do
+ActiveRecord::Schema.define(version: 2022_02_06_184720) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2022_02_05_105540) do
     t.boolean "admin", default: false
     t.boolean "banned", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["name"], name: "index_users_on_name"
   end
 
 end
