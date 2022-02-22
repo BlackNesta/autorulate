@@ -15,4 +15,5 @@ Rails.application.routes.draw do
       patch :ban
     end
   end
+  resources :account_activations, only: [:edit]
 end
