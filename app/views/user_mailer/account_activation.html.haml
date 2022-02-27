@@ -1,6 +1,7 @@
-%h2 Activate your Autorulate account!
+%h2 Autorulate Account Activation
 %p
   = "Hi  #{@user.name}!"
 %p
   Welcome to the Autorulate App! 
-%p=  "Click #{link_to 'here', edit_account_activation_url(@user.activation_token, email: @user.email)} to activate your account."
+%p Click on the link below to activate your account:
+= link_to "Activate account", edit_account_activation_url(@user.activation_token, email: @user.email)
