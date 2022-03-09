@@ -1,0 +1,5 @@
+%li{ id: "post#{post.id}" }
+  = link_to gravatar_for(post.user, size: 50), post.user
+  %span.post_title= link_to post.title, user_post_path(post.user, post)
+  %span.content= post.content
+  %span.timestamp= "Posted #{time_ago_in_words(post.created_at)} ago."
