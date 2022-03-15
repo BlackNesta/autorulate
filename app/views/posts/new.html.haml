@@ -1,6 +1,6 @@
 = provide(:title, "New Announcement")
 
-= form_with(url: user_posts_path(@user), method: :post, local: true) do |f|
+= form_with(url: posts_path, method: :post, local: true) do |f|
   = render 'shared/error_messages', object: @post
 
   = f.label :title
