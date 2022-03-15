@@ -1,13 +1,16 @@
 = provide(:title, "New Announcement")
 
-= form_with(url: posts_path, method: :post, local: true) do |f|
+= form_with(model: @post, method: :post, local: true) do |f|
   = render 'shared/error_messages', object: @post
 
   = f.label :title
-  = f.text_field "post[title]", class: "form-control", autocomplete: "off", required: true
+  = f.text_field :title, class: "form-control", autocomplete: "off", required: true
 
   = f.label :descritpion
   .field 
-    = f.text_area "post[content]", placeholder: "Add car description...", class: "form-control", autocomplete: "off"
+    = f.text_area :content, placeholder: "Add car description...", class: "form-control", autocomplete: "off"
+
+  .images
+    = f.file_field :images, multiple: true
 
   = f.submit "Add Post", class: "btn btn-primary"
