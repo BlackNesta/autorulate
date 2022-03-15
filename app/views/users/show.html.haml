@@ -7,7 +7,7 @@
         = "#{@user.name}"
   .col-md-8
     - if @user.posts.any?
-      %h3= "Cars for sale #{@user.posts.count}"
+      %h3= "Cars for sale: #{@user.posts.count}"
       %ol.posts
         = render @posts
       = will_paginate @posts

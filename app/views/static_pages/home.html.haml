@@ -4,6 +4,10 @@
     %aside.col-md-4
       %section.user_info
         = render 'shared/user_info'
+    .col-md-8
+      %h3 Last Added
+      = render 'shared/feed' 
+      
 - else
   = provide(:title, "Home")
   .center.jumbotron
