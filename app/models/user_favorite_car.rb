@@ -1,0 +1,2 @@
+class UserFavoriteCar < ApplicationRecord
+end
