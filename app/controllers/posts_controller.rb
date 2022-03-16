@@ -17,8 +17,8 @@ class PostsController < ApplicationController
       flash[:success] = "Post created!"
       redirect_to user_path(current_user)
     else
-      #to change it
-      render 'static_pages/home'
+      #@feed_items = Post.paginate(page: params[:page])
+      render :new
     end
   end
 
