@@ -9,10 +9,22 @@
     - if current_user?(post.user)
       = link_to "delete", post ,method: :delete, data: { confirm: "You sure?" }
     - else
-      %span.favorite_link
+      %span
       - if !current_user.favorites.include?(post)
-        = link_to raw("<i class='far fa-star'></i>"), add_to_favorites_post_path(post), method: :post, remote: true
-      - else
-        = link_to raw("<i class='fa fa-star favorite'></i>"), remove_from_favorites_post_path(post), method: :delete, remote: true
+        = link_to raw("<i class='far fa-star'></i>"), add_to_favorites_post_path(post), method: :post, remote: true, id: "add-post-#{post.id}", onclick: "addToFavorites(#{post.id})"
+        = link_to raw("<i class='fa fa-star favorite'></i>"), remove_from_favorites_post_path(post), method: :delete, remote: true, id: "remove-post-#{post.id}", onclick: "removeFromFavorites(#{post.id})", class: "hidden"
 
-  
+      - else
+        = link_to raw("<i class='far fa-star'></i>"), add_to_favorites_post_path(post), method: :post, remote: true, id: "add-post-#{post.id}", onclick: "addToFavorites(#{post.id})", class: "hidden"
+        = link_to raw("<i class='fa fa-star favorite'></i>"), remove_from_favorites_post_path(post), method: :delete, remote: true, id: "remove-post-#{post.id}", onclick: "removeFromFavorites(#{post.id})"
+
+:javascript
+  function addToFavorites(id) {
+    $("#remove-post-" + id).removeClass("hidden")
+    $("#add-post-" + id).addClass("hidden")
+  }
+
+  function removeFromFavorites(id) {
+    $("#remove-post-" + id).addClass("hidden")
+    $("#add-post-" + id).removeClass("hidden")
+  }
