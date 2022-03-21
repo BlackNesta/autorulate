@@ -8,10 +8,11 @@
 
   = f.label :descritpion
   .field 
-    = f.text_area :content, placeholder: "Add car description...", class: "form-control", autocomplete: "off"
+    = f.text_area :content, placeholder: "Add description...", class: "form-control", autocomplete: "off"
 
   .images
-    = f.file_field :images, multiple: true, accept: "image/jpeg,image/gif,image/png" 
+    - (1..6).each do |i|
+      = f.file_field "images[#{i}]", multiple: false, accept: "image/jpeg,image/gif,image/png"
 
   = f.submit "Add Post", class: "btn btn-primary"
 
