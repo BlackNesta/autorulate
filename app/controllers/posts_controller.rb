@@ -38,6 +38,14 @@ class PostsController < ApplicationController
   def update
   end
 
+  def add_to_favorites
+    UserFavoriteCar.create(user_id: current_user.id, post_id: params[:id])
+  end
+
+  def remove_from_favorites
+    UserFavoriteCar.find_by(post_id: params[:id]).destroy
+  end
+
   private
 
     def post_params

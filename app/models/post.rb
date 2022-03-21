@@ -1,5 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :user
+  has_many :user_favorite_cars, dependent: :destroy
+  has_many :favorite_users, through: :user_favorite_cars, source: :user
   has_many_attached :images  
   default_scope -> { order(created_at: :desc) }
   validates :user_id, presence: true
