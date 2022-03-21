@@ -1,8 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
-    if logged_in?
-      @feed_items = Post.paginate(page: params[:page])
-    end
+    @feed_items = Post.paginate(page: params[:page])
   end
 
   def help
@@ -12,5 +10,9 @@ class StaticPagesController < ApplicationController
   end
 
   def contact
+  end
+
+  def favorites
+    @favorites = (current_user.favorites || [] ).paginate(page: params[:page])
   end
 end

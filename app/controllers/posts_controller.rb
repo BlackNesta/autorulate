@@ -12,7 +12,7 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(post_params)
-    @post.images.attach(params[:post][:images])
+    @post.images.attach(params[:post][:images].values) if params[:post][:images].present?
     if @post.save
       flash[:success] = "Post created!"
       redirect_to user_path(current_user)
@@ -36,6 +36,14 @@ class PostsController < ApplicationController
   end
 
   def update
+  end
+
+  def add_to_favorites
+    UserFavoriteCar.create(user_id: current_user.id, post_id: params[:id])
+  end
+
+  def remove_from_favorites
+    UserFavoriteCar.find_by(post_id: params[:id]).destroy
   end
 
   private

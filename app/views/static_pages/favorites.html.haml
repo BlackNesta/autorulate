@@ -1,0 +1,6 @@
+- provide(:title, "Favorites")
+%h1 Favorite Cars
+
+%ol.posts
+  = render @favorites
+= will_paginate @favorites
