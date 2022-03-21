@@ -15,5 +15,6 @@ class StaticPagesController < ApplicationController
   end
 
   def favorites
+    @favorites = (current_user.favorites || [] ).paginate(page: params[:page])
   end
 end

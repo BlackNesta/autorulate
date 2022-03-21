@@ -10,7 +10,9 @@
       = link_to "delete", post ,method: :delete, data: { confirm: "You sure?" }
     - else
       %span.favorite_link
-        - if !current_user.favorites.include?(post)
-          = link_to "add to favorites", add_to_favorites_post_path(post), method: :post, remote: true
-        - else
-          = link_to "remove from favorites", remove_from_favorites_post_path(post), method: :delete, remote: true
+      - if !current_user.favorites.include?(post)
+        = link_to raw("<i class='far fa-star'></i>"), add_to_favorites_post_path(post), method: :post, remote: true
+      - else
+        = link_to raw("<i class='fa fa-star favorite'></i>"), remove_from_favorites_post_path(post), method: :delete, remote: true
+
+  

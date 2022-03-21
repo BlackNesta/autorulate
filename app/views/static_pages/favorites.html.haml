@@ -1,7 +1,6 @@
 - provide(:title, "Favorites")
 %h1 Favorite Cars
 
-- if current_user.favorites.any?
-  %ol.posts
-    = render current_user.favorites
-  /= will_paginate 
+%ol.posts
+  = render @favorites
+= will_paginate @favorites
