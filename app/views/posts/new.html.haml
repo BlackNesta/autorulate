@@ -11,9 +11,10 @@
     = f.text_area :content, placeholder: "Add description...", class: "form-control", autocomplete: "off"
 
   .images
-    - (1..6).each do |i|
-      = f.file_field "images[#{i}]", multiple: false, accept: "image/jpeg,image/gif,image/png", class: "post_images"
-
+    - (1..10).each do |i|
+      .image
+        = image_tag("add-photo", size: "200x200", id: "image-#{i}", onclick: "addPhoto(#{i})", style: "cursor:pointer")
+        = f.file_field "images[#{i}]", multiple: false, accept: "image/jpeg,image/gif,image/png", class: "post_images", style: "display:none", id: "post-images-#{i}", onchange:"readURL(this, #{i})"
   = f.submit "Add Post", class: "btn btn-primary"
 
 :javascript
@@ -24,3 +25,21 @@
       $("#post_image").val("");
     }
   });
+
+  function addPhoto(i) {
+    $("#post-images-" + i).trigger('click')
+  }
+
+  function readURL(input, i) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        $('#image-' + i)
+          .attr('src', e.target.result)
+          .maxidth(200)
+          .height(200);
+      };
+
+      reader.readAsDataURL(input.files[0]);
+    }
+  }

@@ -43,3 +43,13 @@ span.image {
     border: 0;
   }
 }
+
+.images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: center;
+}
+.image {
+  margin: 10px;
+}
