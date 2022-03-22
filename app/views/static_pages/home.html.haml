@@ -1,15 +1,11 @@
 = provide(:title, "Home")
-- if !logged_in?
-  .center.jumbotron
-    %h1 Welcome to Autorulate
-    %h2 This is the home page for the Autorulate.
-    = link_to "Sign up now", signup_path, class: "btn btn-lg btn-primary"
+
 .row
   - if logged_in?
     %aside.col-md-4
       %section.user_info
         = render 'shared/user_info'
   .col-md-8
-    = render 'shared/feed' 
+    = render 'shared/feed'  
     
     

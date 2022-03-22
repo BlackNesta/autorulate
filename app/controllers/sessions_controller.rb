@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
         reset_session
         log_in user
         params[:session][:remember_me] == '1' ? remember(user) : forget(user)
-        redirect_to forwarding_url || user
+        redirect_to forwarding_url || root_path
       elsif user.banned?
         flash[:danger] = 'This user is banned!'
         redirect_to root_path
