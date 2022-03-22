@@ -13,7 +13,7 @@
   .images
     - (1..10).each do |i|
       .image
-        = image_tag("add-photo", size: "200x200", id: "image-#{i}", onclick: "addPhoto(#{i})", style: "cursor:pointer")
+        = image_tag("add-photo.pgn", size: "200x200", id: "image-#{i}", onclick: "addPhoto(#{i})", style: "cursor:pointer")
         = f.file_field "images[#{i}]", multiple: false, accept: "image/jpeg,image/gif,image/png", class: "post_images", style: "display:none", id: "post-images-#{i}", onchange:"readURL(this, #{i})"
   = f.submit "Add Post", class: "btn btn-primary"
 
