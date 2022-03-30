@@ -6,6 +6,39 @@
   = f.label :title
   = f.text_field :title, class: "form-control", autocomplete: "off", required: true
 
+  = f.label :location
+  = f.text_field :location, class: "form-control", autocomplete: "off"
+
+  = f.label :body
+  = f.select :body, options_for_select(@body_type), class: "form-control"
+
+  = f.label :brand
+  = f.text_field :brand, class: "form-control", autocomplete: "off", required: true
+
+  = f.label :model
+  = f.text_field :model, class: "form-control", autocomplete: "off"
+
+  = f.label :year
+  = f.number_field :year, class: "form-control", autocomplete: "off", required: true
+
+  = f.label :price
+  = f.number_field :price, class: "form-control", autocomplete: "off", required: true
+
+  = f.label :km
+  = f.number_field :mileage, class: "form-control", autocomplete: "off", required: true
+
+  = f.label :fuel_type
+  = f.select :fuel, options_for_select(@fuel_type), class: "form-control"
+
+  = f.label :power
+  = f.number_field :power, class: "form-control", autocomplete: "off"
+
+  = f.label :transmition
+  = f.select :transmition, options_for_select(@transmition_type), class: "form-control"
+
+  = f.label :gearbox
+  = f.select :gearbox, options_for_select(@gearbox_type), class: "form-control"
+
   = f.label :descritpion
   .field 
     = f.text_area :content, placeholder: "Add description...", class: "form-control", autocomplete: "off"
