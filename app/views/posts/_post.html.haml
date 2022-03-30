@@ -8,7 +8,7 @@
     = "Posted #{time_ago_in_words(post.created_at)} ago."
     - if logged_in?
       - if current_user?(post.user) || current_user.admin?
-        = link_to raw("<i class='fas fa-edit'></i> <span> Edit </span>"), "#"
+        = link_to raw("<i class='fas fa-edit'></i> <span> Edit </span>"), edit_post_path(post)
         = " | "
         = link_to raw("<i class='fa fa-trash' aria-hidden='true'></i> <span> Delete </span>"), post ,method: :delete, data: { confirm: "You sure?" }
       - else

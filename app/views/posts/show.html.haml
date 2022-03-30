@@ -1,4 +1,13 @@
 = provide(:title, @post.title)
 
-%ol.posts
-  = render @post
+= link_to gravatar_for(@post.user, size: 50), @post.user
+.posts 
+  %span.post_title
+    %h2= @post.title
+  .content= @post.content
+
+  - if @post.images.attached?
+    .images  
+      - @post.images.each_with_index do |p, i| 
+        .image
+          = image_tag(display_image(p), onclick: "openModal(); currentSlide(#{i + 1})", class: "hover-shadow")
