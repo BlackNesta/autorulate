@@ -21,7 +21,7 @@
   = f.label :year
   = f.number_field :year, class: "form-control", autocomplete: "off", required: true
 
-  = f.label :price
+  = f.label "Price(€)"
   = f.number_field :price, class: "form-control", autocomplete: "off", required: true
 
   = f.label :km
@@ -30,13 +30,13 @@
   = f.label :fuel_type
   = f.select :fuel, options_for_select(@fuel_type), class: "form-control"
 
-  = f.label :power
+  = f.label :horsepower
   = f.number_field :power, class: "form-control", autocomplete: "off"
 
-  = f.label :transmition
+  = f.label :transmition_type
   = f.select :transmition, options_for_select(@transmition_type), class: "form-control"
 
-  = f.label :gearbox
+  = f.label :gearbox_type
   = f.select :gearbox, options_for_select(@gearbox_type), class: "form-control"
 
   = f.label :descritpion
