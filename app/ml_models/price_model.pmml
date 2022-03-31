@@ -1,0 +1,435 @@
+<?xml version="1.0"?>
+<PMML xmlns="http://www.dmg.org/PMML-4_4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="4.4">
+  <Header>
+    <Application name="Eps" version="0.3.9"/>
+  </Header>
+  <DataDictionary>
+    <DataField name="brand" optype="categorical" dataType="string"/>
+    <DataField name="model" optype="categorical" dataType="string"/>
+    <DataField name="year" optype="continuous" dataType="double"/>
+    <DataField name="mileage" optype="continuous" dataType="double"/>
+    <DataField name="fuel" optype="categorical" dataType="string"/>
+    <DataField name="power" optype="continuous" dataType="double"/>
+    <DataField name="cc" optype="continuous" dataType="double"/>
+    <DataField name="transmition" optype="categorical" dataType="string"/>
+    <DataField name="gearbox" optype="categorical" dataType="string"/>
+    <DataField name="body" optype="categorical" dataType="string"/>
+  </DataDictionary>
+  <RegressionModel functionName="regression">
+    <MiningSchema>
+      <MiningField name="brand"/>
+      <MiningField name="model"/>
+      <MiningField name="year"/>
+      <MiningField name="mileage"/>
+      <MiningField name="fuel"/>
+      <MiningField name="power"/>
+      <MiningField name="cc"/>
+      <MiningField name="transmition"/>
+      <MiningField name="gearbox"/>
+      <MiningField name="body"/>
+    </MiningSchema>
+    <RegressionTable intercept="-1969533.2433765829">
+      <NumericPredictor name="year" coefficient="986.6132741751562"/>
+      <NumericPredictor name="mileage" coefficient="-0.030182454379780812"/>
+      <NumericPredictor name="power" coefficient="172.75252834530278"/>
+      <NumericPredictor name="cc" coefficient="-11.446672609012486"/>
+      <CategoricalPredictor name="brand" value="Renault" coefficient="1.3175731813847082e+17"/>
+      <CategoricalPredictor name="brand" value="Peugeot" coefficient="9.556966074292547e+16"/>
+      <CategoricalPredictor name="brand" value="Honda" coefficient="-2.3774219199988454e+17"/>
+      <CategoricalPredictor name="brand" value="Opel" coefficient="-5.811992639288619e+16"/>
+      <CategoricalPredictor name="brand" value="Skoda" coefficient="1.3196724126842788e+16"/>
+      <CategoricalPredictor name="brand" value="Audi" coefficient="2.2655964235965876e+16"/>
+      <CategoricalPredictor name="brand" value="Dacia" coefficient="6.476126675025423e+16"/>
+      <CategoricalPredictor name="brand" value="Volkswagen" coefficient="-1.1644960854736788e+16"/>
+      <CategoricalPredictor name="brand" value="Seat" coefficient="-1.3705530740622773e+17"/>
+      <CategoricalPredictor name="brand" value="Ford" coefficient="9.217454025881432e+15"/>
+      <CategoricalPredictor name="brand" value="Mercedes-Benz" coefficient="2.4526436945235216e+16"/>
+      <CategoricalPredictor name="brand" value="Hyundai" coefficient="9.556966074291685e+16"/>
+      <CategoricalPredictor name="brand" value="Mazda" coefficient="4385850563594917.5"/>
+      <CategoricalPredictor name="brand" value="Smart" coefficient="2.016443318155789e+18"/>
+      <CategoricalPredictor name="brand" value="Subaru" coefficient="7.947850067856845e+17"/>
+      <CategoricalPredictor name="brand" value="Volvo" coefficient="3.476790956257984e+16"/>
+      <CategoricalPredictor name="brand" value="Porsche" coefficient="-1.1862044146603234e+17"/>
+      <CategoricalPredictor name="brand" value="Fiat" coefficient="1.676545625340498e+17"/>
+      <CategoricalPredictor name="brand" value="Toyota" coefficient="-9.482645873723384e+16"/>
+      <CategoricalPredictor name="brand" value="Mitsubishi" coefficient="1.4703278598231152e+17"/>
+      <CategoricalPredictor name="brand" value="Jaguar" coefficient="3.466574455006301e+17"/>
+      <CategoricalPredictor name="brand" value="Chevrolet" coefficient="-2.6624916659479258e+17"/>
+      <CategoricalPredictor name="brand" value="Kia" coefficient="2.4554734041508995e+17"/>
+      <CategoricalPredictor name="brand" value="Jeep" coefficient="4.3947639559266854e+17"/>
+      <CategoricalPredictor name="brand" value="Nissan" coefficient="9.556966074293357e+16"/>
+      <CategoricalPredictor name="brand" value="Alfa Romeo" coefficient="-8.287588104281484e+17"/>
+      <CategoricalPredictor name="brand" value="Citroen" coefficient="7.02172384868761e+16"/>
+      <CategoricalPredictor name="brand" value="Suzuki" coefficient="-8.97030396325377e+17"/>
+      <CategoricalPredictor name="brand" value="Infiniti" coefficient="-1.8237398540650796e+18"/>
+      <CategoricalPredictor name="brand" value="Lexus" coefficient="9.55696607429136e+16"/>
+      <CategoricalPredictor name="brand" value="Land Rover" coefficient="-9.199249259820427e+16"/>
+      <CategoricalPredictor name="brand" value="Mini" coefficient="6.37300380934306e+17"/>
+      <CategoricalPredictor name="brand" value="Saab" coefficient="7.569863153794973e+18"/>
+      <CategoricalPredictor name="brand" value="Hummer" coefficient="-2.691205742244213e+18"/>
+      <CategoricalPredictor name="brand" value="SsangYong" coefficient="1.0693649097187668e+18"/>
+      <CategoricalPredictor name="brand" value="Bentley" coefficient="1.018389168787747e+19"/>
+      <CategoricalPredictor name="brand" value="Isuzu" coefficient="-8.709197513463894e+18"/>
+      <CategoricalPredictor name="brand" value="Dodge" coefficient="6.309858693773715e+18"/>
+      <CategoricalPredictor name="brand" value="Chrysler" coefficient="-4.287594445094306e+18"/>
+      <CategoricalPredictor name="model" value="Laguna" coefficient="-1.3175731813847613e+17"/>
+      <CategoricalPredictor name="model" value="207" coefficient="-9.556966074293339e+16"/>
+      <CategoricalPredictor name="model" value="Accord" coefficient="2.3774219199987955e+17"/>
+      <CategoricalPredictor name="model" value="Astra" coefficient="5.811992639287909e+16"/>
+      <CategoricalPredictor name="model" value="Octavia" coefficient="-1.3196724126850134e+16"/>
+      <CategoricalPredictor name="model" value="A4" coefficient="-2.265596423596911e+16"/>
+      <CategoricalPredictor name="model" value="Dokker" coefficient="-6.476126675026004e+16"/>
+      <CategoricalPredictor name="model" value="Passat" coefficient="1.1644960854731674e+16"/>
+      <CategoricalPredictor name="model" value="Altea" coefficient="1.3705530740622491e+17"/>
+      <CategoricalPredictor name="model" value="Mondeo" coefficient="-9.217454025888888e+15"/>
+      <CategoricalPredictor name="model" value="Tiguan" coefficient="1.164496085473489e+16"/>
+      <CategoricalPredictor name="model" value="Polo" coefficient="1.1644960854732078e+16"/>
+      <CategoricalPredictor name="model" value="Vito" coefficient="-2.452643694522398e+16"/>
+      <CategoricalPredictor name="model" value="E" coefficient="-2.452643694522717e+16"/>
+      <CategoricalPredictor name="model" value="Seria 3" coefficient="-972.6673521340904"/>
+      <CategoricalPredictor name="model" value="Viano" coefficient="-2.4526436945225076e+16"/>
+      <CategoricalPredictor name="model" value="A5" coefficient="-2.2655964235971096e+16"/>
+      <CategoricalPredictor name="model" value="S" coefficient="-2.452643694520326e+16"/>
+      <CategoricalPredictor name="model" value="X5" coefficient="2364.3550977986342"/>
+      <CategoricalPredictor name="model" value="ix35" coefficient="-9.556966074292216e+16"/>
+      <CategoricalPredictor name="model" value="Seria 1" coefficient="-978.7967414247292"/>
+      <CategoricalPredictor name="model" value="6" coefficient="-4.385850563601006e+15"/>
+      <CategoricalPredictor name="model" value="C-MAX" coefficient="-9.217454025885244e+15"/>
+      <CategoricalPredictor name="model" value="Santa Fe" coefficient="-9.556966074291992e+16"/>
+      <CategoricalPredictor name="model" value="2" coefficient="-4385850563597322.5"/>
+      <CategoricalPredictor name="model" value="Forfour" coefficient="-2.0164433181557868e+18"/>
+      <CategoricalPredictor name="model" value="Golf" coefficient="1.1644960854732386e+16"/>
+      <CategoricalPredictor name="model" value="A3" coefficient="-2.2655964235970228e+16"/>
+      <CategoricalPredictor name="model" value="GLE" coefficient="-2.4526436945210988e+16"/>
+      <CategoricalPredictor name="model" value="Grand Scenic" coefficient="-1.3175731813847795e+17"/>
+      <CategoricalPredictor name="model" value="307" coefficient="-9.55696607429214e+16"/>
+      <CategoricalPredictor name="model" value="100" coefficient="-1.319672412683965e+16"/>
+      <CategoricalPredictor name="model" value="Duster" coefficient="-6.476126675026302e+16"/>
+      <CategoricalPredictor name="model" value="Exeo" coefficient="1.3705530740622286e+17"/>
+      <CategoricalPredictor name="model" value="Forester" coefficient="-7.947850067856878e+17"/>
+      <CategoricalPredictor name="model" value="Touran" coefficient="1.1644960854735794e+16"/>
+      <CategoricalPredictor name="model" value="Focus" coefficient="-9.217454025891464e+15"/>
+      <CategoricalPredictor name="model" value="Fiesta" coefficient="-9.21745402588681e+15"/>
+      <CategoricalPredictor name="model" value="Megane" coefficient="-1.3175731813848048e+17"/>
+      <CategoricalPredictor name="model" value="2008" coefficient="-9.556966074293242e+16"/>
+      <CategoricalPredictor name="model" value="Scenic" coefficient="-1.3175731813847797e+17"/>
+      <CategoricalPredictor name="model" value="Seria 5" coefficient="827.7339042633329"/>
+      <CategoricalPredictor name="model" value="X6" coefficient="20859.572815126507"/>
+      <CategoricalPredictor name="model" value="Fabia" coefficient="-1.3196724126850222e+16"/>
+      <CategoricalPredictor name="model" value="Seria 4" coefficient="1015.4950102095847"/>
+      <CategoricalPredictor name="model" value="V40" coefficient="-3.476790956258743e+16"/>
+      <CategoricalPredictor name="model" value="X1" coefficient="-5222.846716173701"/>
+      <CategoricalPredictor name="model" value="Cayenne" coefficient="1.1862044146605214e+17"/>
+      <CategoricalPredictor name="model" value="Focus C-Max" coefficient="-9.21745402588962e+15"/>
+      <CategoricalPredictor name="model" value="Freemont" coefficient="-1.6765456253405184e+17"/>
+      <CategoricalPredictor name="model" value="X4" coefficient="8898.67190097004"/>
+      <CategoricalPredictor name="model" value="Passat CC" coefficient="1.1644960854730672e+16"/>
+      <CategoricalPredictor name="model" value="Auris" coefficient="9.482645873722418e+16"/>
+      <CategoricalPredictor name="model" value="ASX" coefficient="-1.47032785982319e+17"/>
+      <CategoricalPredictor name="model" value="Meriva" coefficient="5.811992639288298e+16"/>
+      <CategoricalPredictor name="model" value="Fortwo" coefficient="-2.0164433181557957e+18"/>
+      <CategoricalPredictor name="model" value="Touareg" coefficient="1.164496085474825e+16"/>
+      <CategoricalPredictor name="model" value="A6" coefficient="-2.2655964235969612e+16"/>
+      <CategoricalPredictor name="model" value="3" coefficient="-4385850563595753.5"/>
+      <CategoricalPredictor name="model" value="Transit" coefficient="-9.217454025878686e+15"/>
+      <CategoricalPredictor name="model" value="C" coefficient="-2.4526436945231548e+16"/>
+      <CategoricalPredictor name="model" value="ML" coefficient="-2.452643694523622e+16"/>
+      <CategoricalPredictor name="model" value="F-Pace" coefficient="-3.4665744550063085e+17"/>
+      <CategoricalPredictor name="model" value="KA" coefficient="-9.217454025882296e+15"/>
+      <CategoricalPredictor name="model" value="Citan" coefficient="-2.4526436945235184e+16"/>
+      <CategoricalPredictor name="model" value="Agila" coefficient="5.8119926392881704e+16"/>
+      <CategoricalPredictor name="model" value="Cruze" coefficient="2.662491665947751e+17"/>
+      <CategoricalPredictor name="model" value="Logan" coefficient="-6.476126675026411e+16"/>
+      <CategoricalPredictor name="model" value="EDGE" coefficient="-9.217454025885802e+15"/>
+      <CategoricalPredictor name="model" value="SQ8" coefficient="-2.2655964235910856e+16"/>
+      <CategoricalPredictor name="model" value="Sandero Stepway" coefficient="-6.476126675026296e+16"/>
+      <CategoricalPredictor name="model" value="Signum" coefficient="5.811992639288989e+16"/>
+      <CategoricalPredictor name="model" value="FR-V" coefficient="2.3774219199988445e+17"/>
+      <CategoricalPredictor name="model" value="TT" coefficient="-2.2655964235972244e+16"/>
+      <CategoricalPredictor name="model" value="Corolla Verso" coefficient="9.482645873723848e+16"/>
+      <CategoricalPredictor name="model" value="Sportage" coefficient="-2.4554734041509603e+17"/>
+      <CategoricalPredictor name="model" value="A6 Allroad" coefficient="-2.2655964235963956e+16"/>
+      <CategoricalPredictor name="model" value="Wrangler" coefficient="-4.394763955926586e+17"/>
+      <CategoricalPredictor name="model" value="Sprinter" coefficient="-2.452643694522283e+16"/>
+      <CategoricalPredictor name="model" value="CX-5" coefficient="-4385850563597139.5"/>
+      <CategoricalPredictor name="model" value="Land Cruiser" coefficient="9.482645873725725e+16"/>
+      <CategoricalPredictor name="model" value="S60" coefficient="-3.476790956258533e+16"/>
+      <CategoricalPredictor name="model" value="Corsa" coefficient="5.811992639288002e+16"/>
+      <CategoricalPredictor name="model" value="Panamera" coefficient="1.1862044146604317e+17"/>
+      <CategoricalPredictor name="model" value="Seria 7" coefficient="7429.588841209936"/>
+      <CategoricalPredictor name="model" value="T-ROC" coefficient="1.1644960854732526e+16"/>
+      <CategoricalPredictor name="model" value="Qashqai" coefficient="-9.55696607429381e+16"/>
+      <CategoricalPredictor name="model" value="Tourneo" coefficient="-9.217454025891766e+15"/>
+      <CategoricalPredictor name="model" value="Phaeton" coefficient="1.1644960854732304e+16"/>
+      <CategoricalPredictor name="model" value="Hilux" coefficient="9.48264587372457e+16"/>
+      <CategoricalPredictor name="model" value="Jetta" coefficient="1.1644960854734026e+16"/>
+      <CategoricalPredictor name="model" value="Bravo" coefficient="-1.6765456253406317e+17"/>
+      <CategoricalPredictor name="model" value="159" coefficient="8.287588104281437e+17"/>
+      <CategoricalPredictor name="model" value="Q7" coefficient="-2.2655964235953332e+16"/>
+      <CategoricalPredictor name="model" value="A" coefficient="-2.452643694523595e+16"/>
+      <CategoricalPredictor name="model" value="RAV4" coefficient="9.482645873723262e+16"/>
+      <CategoricalPredictor name="model" value="GLK" coefficient="-2.4526436945238664e+16"/>
+      <CategoricalPredictor name="model" value="Superb" coefficient="-1.319672412684847e+16"/>
+      <CategoricalPredictor name="model" value="XC 60" coefficient="-3.476790956258301e+16"/>
+      <CategoricalPredictor name="model" value="C-Crosser" coefficient="-7.0217238486887016e+16"/>
+      <CategoricalPredictor name="model" value="Elantra" coefficient="-9.556966074292882e+16"/>
+      <CategoricalPredictor name="model" value="3008" coefficient="-9.556966074293171e+16"/>
+      <CategoricalPredictor name="model" value="SX4 S-Cross" coefficient="8.970303963253688e+17"/>
+      <CategoricalPredictor name="model" value="Caddy" coefficient="1.1644960854736644e+16"/>
+      <CategoricalPredictor name="model" value="CLS" coefficient="-2.4526436945223724e+16"/>
+      <CategoricalPredictor name="model" value="RAPID" coefficient="-1.3196724126852418e+16"/>
+      <CategoricalPredictor name="model" value="Espace" coefficient="-1.3175731813847688e+17"/>
+      <CategoricalPredictor name="model" value="Renegade" coefficient="-4.394763955926771e+17"/>
+      <CategoricalPredictor name="model" value="EcoSport" coefficient="-9.217454025900148e+15"/>
+      <CategoricalPredictor name="model" value="Citigo" coefficient="-1.3196724126856252e+16"/>
+      <CategoricalPredictor name="model" value="Z4" coefficient="8340.17809431543"/>
+      <CategoricalPredictor name="model" value="Passat Alltrack" coefficient="1.1644960854727718e+16"/>
+      <CategoricalPredictor name="model" value="GLB" coefficient="-2.4526436945220856e+16"/>
+      <CategoricalPredictor name="model" value="Master" coefficient="-1.3175731813846869e+17"/>
+      <CategoricalPredictor name="model" value="Ateca" coefficient="1.3705530740622062e+17"/>
+      <CategoricalPredictor name="model" value="XF" coefficient="-3.466574455006331e+17"/>
+      <CategoricalPredictor name="model" value="Combo" coefficient="5.811992639287031e+16"/>
+      <CategoricalPredictor name="model" value="Symbol" coefficient="-1.3175731813847979e+17"/>
+      <CategoricalPredictor name="model" value="Camry" coefficient="9.482645873723155e+16"/>
+      <CategoricalPredictor name="model" value="V" coefficient="-2.452643694521799e+16"/>
+      <CategoricalPredictor name="model" value="SLK" coefficient="-2.4526436945235708e+16"/>
+      <CategoricalPredictor name="model" value="208" coefficient="-9.5569660742933e+16"/>
+      <CategoricalPredictor name="model" value="Kodiaq" coefficient="-1.31967241268434e+16"/>
+      <CategoricalPredictor name="model" value="Multivan" coefficient="1.1644960854741418e+16"/>
+      <CategoricalPredictor name="model" value="Corolla" coefficient="9.482645873722195e+16"/>
+      <CategoricalPredictor name="model" value="QX70" coefficient="1.823739854065074e+18"/>
+      <CategoricalPredictor name="model" value="GLC Coupe" coefficient="-2.45264369452226e+16"/>
+      <CategoricalPredictor name="model" value="Note" coefficient="-9.55696607429391e+16"/>
+      <CategoricalPredictor name="model" value="X5 M" coefficient="15601.811846217606"/>
+      <CategoricalPredictor name="model" value="E-Pace" coefficient="-3.4665744550062394e+17"/>
+      <CategoricalPredictor name="model" value="Seria NX" coefficient="-9.556966074290714e+16"/>
+      <CategoricalPredictor name="model" value="GLA" coefficient="-2.4526436945229252e+16"/>
+      <CategoricalPredictor name="model" value="Galaxy" coefficient="-9.217454025884832e+15"/>
+      <CategoricalPredictor name="model" value="S-Max" coefficient="-9.217454025880836e+15"/>
+      <CategoricalPredictor name="model" value="Kuga" coefficient="-9.21745402588801e+15"/>
+      <CategoricalPredictor name="model" value="Grand Cherokee" coefficient="-4.3947639559266675e+17"/>
+      <CategoricalPredictor name="model" value="Puma" coefficient="-9.217454025906564e+15"/>
+      <CategoricalPredictor name="model" value="Doblo" coefficient="-1.676545625340599e+17"/>
+      <CategoricalPredictor name="model" value="Swift" coefficient="8.970303963253591e+17"/>
+      <CategoricalPredictor name="model" value="Discovery Sport" coefficient="9.199249259821858e+16"/>
+      <CategoricalPredictor name="model" value="Tucson" coefficient="-9.556966074292134e+16"/>
+      <CategoricalPredictor name="model" value="Pulsar" coefficient="-9.556966074295293e+16"/>
+      <CategoricalPredictor name="model" value="ARTEON" coefficient="1.1644960854732604e+16"/>
+      <CategoricalPredictor name="model" value="L200" coefficient="-1.4703278598230566e+17"/>
+      <CategoricalPredictor name="model" value="A1" coefficient="-2.2655964235973012e+16"/>
+      <CategoricalPredictor name="model" value="Sharan" coefficient="1.1644960854734786e+16"/>
+      <CategoricalPredictor name="model" value="Freelander" coefficient="9.199249259820616e+16"/>
+      <CategoricalPredictor name="model" value="Discovery" coefficient="9.199249259821275e+16"/>
+      <CategoricalPredictor name="model" value="A8" coefficient="-2.265596423595956e+16"/>
+      <CategoricalPredictor name="model" value="Seria 6" coefficient="-4757.687464410163"/>
+      <CategoricalPredictor name="model" value="Explorer" coefficient="-9.217454025883914e+15"/>
+      <CategoricalPredictor name="model" value="Epica" coefficient="2.6624916659478246e+17"/>
+      <CategoricalPredictor name="model" value="Sorento" coefficient="-2.4554734041509104e+17"/>
+      <CategoricalPredictor name="model" value="5008" coefficient="-9.556966074293072e+16"/>
+      <CategoricalPredictor name="model" value="Juke" coefficient="-9.556966074294062e+16"/>
+      <CategoricalPredictor name="model" value="Ducato" coefficient="-1.6765456253404323e+17"/>
+      <CategoricalPredictor name="model" value="Q5" coefficient="-2.2655964235964184e+16"/>
+      <CategoricalPredictor name="model" value="Prius" coefficient="9.482645873722843e+16"/>
+      <CategoricalPredictor name="model" value="Antara" coefficient="5.8119926392876344e+16"/>
+      <CategoricalPredictor name="model" value="Logan Stepway" coefficient="-6.476126675026899e+16"/>
+      <CategoricalPredictor name="model" value="Altul" coefficient="-9.556966074293022e+16"/>
+      <CategoricalPredictor name="model" value="AMG" coefficient="-2.452643694518769e+16"/>
+      <CategoricalPredictor name="model" value="Berlingo" coefficient="-7.021723848687038e+16"/>
+      <CategoricalPredictor name="model" value="C3" coefficient="-7.021723848688224e+16"/>
+      <CategoricalPredictor name="model" value="XC 90" coefficient="-3.4767909562578844e+16"/>
+      <CategoricalPredictor name="model" value="GLE Coupe" coefficient="-2.4526436945207056e+16"/>
+      <CategoricalPredictor name="model" value="Vitara" coefficient="8.97030396325374e+17"/>
+      <CategoricalPredictor name="model" value="508" coefficient="-9.556966074293582e+16"/>
+      <CategoricalPredictor name="model" value="Captiva" coefficient="2.6624916659478602e+17"/>
+      <CategoricalPredictor name="model" value="XCeed" coefficient="-2.455473404151078e+17"/>
+      <CategoricalPredictor name="model" value="Talisman" coefficient="-1.3175731813848248e+17"/>
+      <CategoricalPredictor name="model" value="Q70" coefficient="1.823739854065082e+18"/>
+      <CategoricalPredictor name="model" value="Tourneo Custom " coefficient="-9.217454025881136e+15"/>
+      <CategoricalPredictor name="model" value="i10" coefficient="-9.556966074293333e+16"/>
+      <CategoricalPredictor name="model" value="Insignia" coefficient="5.811992639287683e+16"/>
+      <CategoricalPredictor name="model" value="Grand Santa Fe" coefficient="-9.556966074291474e+16"/>
+      <CategoricalPredictor name="model" value="Golf Plus" coefficient="1.1644960854733404e+16"/>
+      <CategoricalPredictor name="model" value="I30" coefficient="-9.556966074292947e+16"/>
+      <CategoricalPredictor name="model" value="S90" coefficient="-3.476790956258058e+16"/>
+      <CategoricalPredictor name="model" value="Cooper" coefficient="-6.373003809343108e+17"/>
+      <CategoricalPredictor name="model" value="X4 M" coefficient="2923.156140221392"/>
+      <CategoricalPredictor name="model" value="Ranger" coefficient="-9.217454025873798e+15"/>
+      <CategoricalPredictor name="model" value="KONA" coefficient="-9.556966074293746e+16"/>
+      <CategoricalPredictor name="model" value="Jazz" coefficient="2.377421919998705e+17"/>
+      <CategoricalPredictor name="model" value="i20" coefficient="-9.556966074293117e+16"/>
+      <CategoricalPredictor name="model" value="B9 Tribeca" coefficient="-7.94785006785694e+17"/>
+      <CategoricalPredictor name="model" value="Leon" coefficient="1.3705530740621861e+17"/>
+      <CategoricalPredictor name="model" value="CX-3" coefficient="-4385850563597045.5"/>
+      <CategoricalPredictor name="model" value="Caravelle" coefficient="1.1644960854745316e+16"/>
+      <CategoricalPredictor name="model" value="308" coefficient="-9.55696607429347e+16"/>
+      <CategoricalPredictor name="model" value="Civic" coefficient="2.3774219199987386e+17"/>
+      <CategoricalPredictor name="model" value="CLA" coefficient="-2.452643694523067e+16"/>
+      <CategoricalPredictor name="model" value="Q3" coefficient="-2.265596423596738e+16"/>
+      <CategoricalPredictor name="model" value="500" coefficient="-1.6765456253405606e+17"/>
+      <CategoricalPredictor name="model" value="Zafira" coefficient="5.811992639287954e+16"/>
+      <CategoricalPredictor name="model" value="Mokka" coefficient="5.811992639287554e+16"/>
+      <CategoricalPredictor name="model" value="Koleos" coefficient="-1.3175731813847872e+17"/>
+      <CategoricalPredictor name="model" value="HR-V" coefficient="2.377421919998786e+17"/>
+      <CategoricalPredictor name="model" value="XJ" coefficient="-3.4665744550061254e+17"/>
+      <CategoricalPredictor name="model" value="Bronco" coefficient="-9.217454025861772e+15"/>
+      <CategoricalPredictor name="model" value="Qashqai+2" coefficient="-9.556966074294357e+16"/>
+      <CategoricalPredictor name="model" value="G" coefficient="-2.4526436945134388e+16"/>
+      <CategoricalPredictor name="model" value="i40" coefficient="-9.556966074292222e+16"/>
+      <CategoricalPredictor name="model" value="C4" coefficient="-7.021723848688483e+16"/>
+      <CategoricalPredictor name="model" value="Ignis" coefficient="8.970303963253816e+17"/>
+      <CategoricalPredictor name="model" value="9-3" coefficient="-7.569863153794982e+18"/>
+      <CategoricalPredictor name="model" value="Range Rover Sport" coefficient="9.199249259821323e+16"/>
+      <CategoricalPredictor name="model" value="V60" coefficient="-3.4767909562584624e+16"/>
+      <CategoricalPredictor name="model" value="Tourneo Connect" coefficient="-9.217454025884206e+15"/>
+      <CategoricalPredictor name="model" value="FX 35" coefficient="1.8237398540650473e+18"/>
+      <CategoricalPredictor name="model" value="Sandero" coefficient="-6.476126675026073e+16"/>
+      <CategoricalPredictor name="model" value="Giulia" coefficient="8.287588104281536e+17"/>
+      <CategoricalPredictor name="model" value="Range Rover" coefficient="9.199249259825597e+16"/>
+      <CategoricalPredictor name="model" value="X" coefficient="-2.4526436945220732e+16"/>
+      <CategoricalPredictor name="model" value="Transporter" coefficient="1.1644960854736482e+16"/>
+      <CategoricalPredictor name="model" value="Colt" coefficient="-1.4703278598232147e+17"/>
+      <CategoricalPredictor name="model" value="Q8" coefficient="-2.265596423592641e+16"/>
+      <CategoricalPredictor name="model" value="C-HR" coefficient="9.482645873722269e+16"/>
+      <CategoricalPredictor name="model" value="Seria 8" coefficient="44500.28921619052"/>
+      <CategoricalPredictor name="model" value="GLC" coefficient="-2.4526436945226784e+16"/>
+      <CategoricalPredictor name="model" value="Clio" coefficient="-1.317573181384783e+17"/>
+      <CategoricalPredictor name="model" value="Countryman" coefficient="-6.37300380934316e+17"/>
+      <CategoricalPredictor name="model" value="Punto" coefficient="-1.6765456253405392e+17"/>
+      <CategoricalPredictor name="model" value="Fluence" coefficient="-1.317573181384808e+17"/>
+      <CategoricalPredictor name="model" value="Kadjar" coefficient="-1.3175731813847829e+17"/>
+      <CategoricalPredictor name="model" value="Compass" coefficient="-4.3947639559266854e+17"/>
+      <CategoricalPredictor name="model" value="Ibiza" coefficient="1.3705530740622198e+17"/>
+      <CategoricalPredictor name="model" value="Amarok" coefficient="1.1644960854736032e+16"/>
+      <CategoricalPredictor name="model" value="X7" coefficient="51218.78197598991"/>
+      <CategoricalPredictor name="model" value="Arona" coefficient="1.3705530740620429e+17"/>
+      <CategoricalPredictor name="model" value="Kangoo" coefficient="-1.3175731813847611e+17"/>
+      <CategoricalPredictor name="model" value="Vivaro" coefficient="5.811992639288723e+16"/>
+      <CategoricalPredictor name="model" value="Pajero Pinin" coefficient="-1.4703278598230403e+17"/>
+      <CategoricalPredictor name="model" value="Range Rover Evoque" coefficient="9.199249259820613e+16"/>
+      <CategoricalPredictor name="model" value="Eos" coefficient="1.1644960854734294e+16"/>
+      <CategoricalPredictor name="model" value="Transit Custom " coefficient="-9.217454025891678e+15"/>
+      <CategoricalPredictor name="model" value="Pick-up" coefficient="-6.476126675026193e+16"/>
+      <CategoricalPredictor name="model" value="500X" coefficient="-1.6765456253405168e+17"/>
+      <CategoricalPredictor name="model" value="Grand Vitara" coefficient="8.97030396325374e+17"/>
+      <CategoricalPredictor name="model" value="Grande Punto" coefficient="-1.6765456253404458e+17"/>
+      <CategoricalPredictor name="model" value="Sedici" coefficient="-1.6765456253404874e+17"/>
+      <CategoricalPredictor name="model" value="NP300 Pickup" coefficient="-9.55696607429291e+16"/>
+      <CategoricalPredictor name="model" value="Macan" coefficient="1.1862044146605098e+17"/>
+      <CategoricalPredictor name="model" value="C4 Grand Picasso" coefficient="-7.021723848688101e+16"/>
+      <CategoricalPredictor name="model" value="Pajero" coefficient="-1.4703278598230246e+17"/>
+      <CategoricalPredictor name="model" value="SX4" coefficient="8.970303963253695e+17"/>
+      <CategoricalPredictor name="model" value="S5" coefficient="-2.2655964235988852e+16"/>
+      <CategoricalPredictor name="model" value="X6 M" coefficient="19753.2489172084"/>
+      <CategoricalPredictor name="model" value="Boxer" coefficient="-9.556966074290613e+16"/>
+      <CategoricalPredictor name="model" value="V50" coefficient="-3.476790956259071e+16"/>
+      <CategoricalPredictor name="model" value="Cooper S" coefficient="-6.373003809343153e+17"/>
+      <CategoricalPredictor name="model" value="Vectra" coefficient="5.811992639288617e+16"/>
+      <CategoricalPredictor name="model" value="GRAND C-MAX" coefficient="-9.2174540258899e+15"/>
+      <CategoricalPredictor name="model" value="A7" coefficient="-2.2655964235960276e+16"/>
+      <CategoricalPredictor name="model" value="Yaris" coefficient="9.482645873722472e+16"/>
+      <CategoricalPredictor name="model" value="Range Rover Velar" coefficient="9.199249259822762e+16"/>
+      <CategoricalPredictor name="model" value="B" coefficient="-2.4526436945233704e+16"/>
+      <CategoricalPredictor name="model" value="Fusion" coefficient="-9.217454025875128e+15"/>
+      <CategoricalPredictor name="model" value="Panda" coefficient="-1.6765456253406214e+17"/>
+      <CategoricalPredictor name="model" value="Grandland X" coefficient="5.8119926392875976e+16"/>
+      <CategoricalPredictor name="model" value="UX" coefficient="-9.556966074291747e+16"/>
+      <CategoricalPredictor name="model" value="SQ7" coefficient="-2.265596423596792e+16"/>
+      <CategoricalPredictor name="model" value="DS4" coefficient="-7.021723848688314e+16"/>
+      <CategoricalPredictor name="model" value="C4 Cactus" coefficient="-7.0217238486883096e+16"/>
+      <CategoricalPredictor name="model" value="407" coefficient="-9.5569660742938e+16"/>
+      <CategoricalPredictor name="model" value="Grandis" coefficient="-1.470327859823221e+17"/>
+      <CategoricalPredictor name="model" value="Scala" coefficient="-1.3196724126857438e+16"/>
+      <CategoricalPredictor name="model" value="Crossland" coefficient="5.811992639287642e+16"/>
+      <CategoricalPredictor name="model" value="MX-5" coefficient="-4385850563587158.5"/>
+      <CategoricalPredictor name="model" value="Aveo" coefficient="2.662491665947831e+17"/>
+      <CategoricalPredictor name="model" value="206" coefficient="-9.556966074292902e+16"/>
+      <CategoricalPredictor name="model" value="Tipo" coefficient="-1.6765456253406074e+17"/>
+      <CategoricalPredictor name="model" value="H2" coefficient="2.6912057422442486e+18"/>
+      <CategoricalPredictor name="model" value="C5" coefficient="-7.0217238486887016e+16"/>
+      <CategoricalPredictor name="model" value="XC 40" coefficient="-3.4767909562578416e+16"/>
+      <CategoricalPredictor name="model" value="Bora" coefficient="1.1644960854740968e+16"/>
+      <CategoricalPredictor name="model" value="C1" coefficient="-7.0217238486884776e+16"/>
+      <CategoricalPredictor name="model" value="Outlander" coefficient="-1.4703278598231648e+17"/>
+      <CategoricalPredictor name="model" value="Xsara Picasso" coefficient="-7.021723848688977e+16"/>
+      <CategoricalPredictor name="model" value="CX-7" coefficient="-4.38585056360143e+15"/>
+      <CategoricalPredictor name="model" value="Tivoli" coefficient="-1.0693649097187721e+18"/>
+      <CategoricalPredictor name="model" value="Crafter" coefficient="1.1644960854730804e+16"/>
+      <CategoricalPredictor name="model" value="Bentayga" coefficient="-1.0183891687877343e+19"/>
+      <CategoricalPredictor name="model" value="Seria 2 " coefficient="-8978.479741636125"/>
+      <CategoricalPredictor name="model" value="i3" coefficient="-23809.372988671967"/>
+      <CategoricalPredictor name="model" value="Toledo" coefficient="1.3705530740621413e+17"/>
+      <CategoricalPredictor name="model" value="Avensis" coefficient="9.482645873722755e+16"/>
+      <CategoricalPredictor name="model" value="Adam" coefficient="5.811992639288641e+16"/>
+      <CategoricalPredictor name="model" value="LC 500" coefficient="-9.556966074287413e+16"/>
+      <CategoricalPredictor name="model" value="Camaro" coefficient="2.6624916659477347e+17"/>
+      <CategoricalPredictor name="model" value="Kamiq" coefficient="-1.3196724126859046e+16"/>
+      <CategoricalPredictor name="model" value="CR-V" coefficient="2.3774219199988928e+17"/>
+      <CategoricalPredictor name="model" value="Stelvio" coefficient="8.287588104281485e+17"/>
+      <CategoricalPredictor name="model" value="Seria RX" coefficient="-9.556966074289709e+16"/>
+      <CategoricalPredictor name="model" value="Soul" coefficient="-2.455473404150905e+17"/>
+      <CategoricalPredictor name="model" value="D-Max" coefficient="8.709197513463917e+18"/>
+      <CategoricalPredictor name="model" value="Partner" coefficient="-9.556966074293448e+16"/>
+      <CategoricalPredictor name="model" value="Logan Van" coefficient="-6.476126675024943e+16"/>
+      <CategoricalPredictor name="model" value="Cherokee" coefficient="-4.394763955926699e+17"/>
+      <CategoricalPredictor name="model" value="Ceed" coefficient="-2.4554734041509734e+17"/>
+      <CategoricalPredictor name="model" value="Mustang" coefficient="-9.21745402589459e+15"/>
+      <CategoricalPredictor name="model" value="C8" coefficient="-7.021723848686456e+16"/>
+      <CategoricalPredictor name="model" value="Lodgy" coefficient="-6.476126675027041e+16"/>
+      <CategoricalPredictor name="model" value="Scirocco" coefficient="1.1644960854728608e+16"/>
+      <CategoricalPredictor name="model" value="Q50" coefficient="1.8237398540650445e+18"/>
+      <CategoricalPredictor name="model" value="Aygo" coefficient="9.48264587372229e+16"/>
+      <CategoricalPredictor name="model" value="Lancer" coefficient="-1.4703278598231635e+17"/>
+      <CategoricalPredictor name="model" value="GLS" coefficient="-2.4526436945196644e+16"/>
+      <CategoricalPredictor name="model" value="Picanto" coefficient="-2.4554734041508246e+17"/>
+      <CategoricalPredictor name="model" value="CLK" coefficient="-2.4526436945234056e+16"/>
+      <CategoricalPredictor name="model" value="C4 Picasso" coefficient="-7.021723848688255e+16"/>
+      <CategoricalPredictor name="model" value="Xsara" coefficient="-7.021723848687412e+16"/>
+      <CategoricalPredictor name="model" value="911" coefficient="1.1862044146607635e+17"/>
+      <CategoricalPredictor name="model" value="Trafic" coefficient="-1.3175731813846619e+17"/>
+      <CategoricalPredictor name="model" value="Across" coefficient="8.970303963253811e+17"/>
+      <CategoricalPredictor name="model" value="4007" coefficient="-9.556966074292926e+16"/>
+      <CategoricalPredictor name="model" value="S40" coefficient="-3.47679095625948e+16"/>
+      <CategoricalPredictor name="model" value="SLC" coefficient="-2.4526436945228244e+16"/>
+      <CategoricalPredictor name="model" value="X-Trail" coefficient="-9.556966074293186e+16"/>
+      <CategoricalPredictor name="model" value="Defender" coefficient="9.199249259825346e+16"/>
+      <CategoricalPredictor name="model" value="Golf Sportsvan" coefficient="1.1644960854726618e+16"/>
+      <CategoricalPredictor name="model" value="XC 70" coefficient="-3.476790956257788e+16"/>
+      <CategoricalPredictor name="model" value="X2" coefficient="10480.849663813478"/>
+      <CategoricalPredictor name="model" value="Tarraco" coefficient="1.37055307406239e+17"/>
+      <CategoricalPredictor name="model" value="Karoq" coefficient="-1.3196724126850504e+16"/>
+      <CategoricalPredictor name="model" value="Challenger" coefficient="-6.309858693773679e+18"/>
+      <CategoricalPredictor name="model" value="Giulietta" coefficient="8.287588104281476e+17"/>
+      <CategoricalPredictor name="model" value="RS7" coefficient="-2.265596423591729e+16"/>
+      <CategoricalPredictor name="model" value="Alhambra" coefficient="1.3705530740621933e+17"/>
+      <CategoricalPredictor name="model" value="Navara" coefficient="-9.556966074293285e+16"/>
+      <CategoricalPredictor name="model" value="ONE" coefficient="-6.373003809343091e+17"/>
+      <CategoricalPredictor name="model" value="C3 AIRCROSS" coefficient="-7.021723848687844e+16"/>
+      <CategoricalPredictor name="model" value="Seria IS" coefficient="-9.556966074291678e+16"/>
+      <CategoricalPredictor name="model" value="5" coefficient="-4385850563602100.5"/>
+      <CategoricalPredictor name="model" value="Micra" coefficient="-9.556966074294731e+16"/>
+      <CategoricalPredictor name="model" value="C-Elysee" coefficient="-7.021723848688956e+16"/>
+      <CategoricalPredictor name="model" value="S80" coefficient="-3.476790956257331e+16"/>
+      <CategoricalPredictor name="model" value="SpaceTourer" coefficient="-7.021723848688512e+16"/>
+      <CategoricalPredictor name="model" value="Roomster" coefficient="-1.3196724126840188e+16"/>
+      <CategoricalPredictor name="model" value="Grand Voyager" coefficient="4.2875944450943063e+18"/>
+      <CategoricalPredictor name="model" value="Cerato" coefficient="-2.455473404150948e+17"/>
+      <CategoricalPredictor name="model" value="Croma" coefficient="-1.6765456253404342e+17"/>
+      <CategoricalPredictor name="model" value="Alto" coefficient="8.970303963253715e+17"/>
+      <CategoricalPredictor name="model" value="Yeti" coefficient="-1.3196724126839252e+16"/>
+      <CategoricalPredictor name="fuel" value="Petrol" coefficient="-1882.0429021316995"/>
+      <CategoricalPredictor name="fuel" value="Hibrid" coefficient="10491.304077160587"/>
+      <CategoricalPredictor name="fuel" value="Petrol + CNG" coefficient="-3541.5388087432493"/>
+      <CategoricalPredictor name="fuel" value="Petrol + GPL" coefficient="-2988.3261108621946"/>
+      <CategoricalPredictor name="transmition" value="Front" coefficient="363.11918729230655"/>
+      <CategoricalPredictor name="transmition" value="Rear" coefficient="-4748.011353823183"/>
+      <CategoricalPredictor name="gearbox" value="Manual" coefficient="1457.9294301036318"/>
+      <CategoricalPredictor name="body" value="Sedan" coefficient="586.3222999144174"/>
+      <CategoricalPredictor name="body" value="Small car" coefficient="286.27094655376914"/>
+      <CategoricalPredictor name="body" value="Combi" coefficient="200.11228790372144"/>
+      <CategoricalPredictor name="body" value="Minivan" coefficient="-617.3277760416328"/>
+      <CategoricalPredictor name="body" value="Coupe" coefficient="3113.7894460598045"/>
+      <CategoricalPredictor name="body" value="Compact" coefficient="507.907994400005"/>
+      <CategoricalPredictor name="body" value="Cabrio" coefficient="-106.63408363868757"/>
+    </RegressionTable>
+  </RegressionModel>
+</PMML>

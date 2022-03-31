@@ -54,7 +54,7 @@ class PostsController < ApplicationController
   private
 
     def post_params
-      params.require(:post).permit(:title, :content, :images, :location, :body, :brand, :model, :year, :price, :mileage, :fuel, :power, :transmition, :gearbox)
+      params.require(:post).permit(:title, :content, :images, :location, :body, :brand, :model, :year, :price, :mileage, :fuel, :power, :transmition, :gearbox, :cc)
     end
 
     def logged_in_user
@@ -75,10 +75,10 @@ class PostsController < ApplicationController
     end
 
     def load_post_fields
-      @body_type = ["Cabrio", "Combi", "Compact", "Coupe", "Sedan", "SUV", "Small car"]
+      @body_type = ["Cabrio", "Combi", "Compact", "Coupe", "Sedan", "SUV", "Small car", "Minivan"]
       @gearbox_type = ["Manual", "Automatic"]
       @transmition_type = ["Front", "Rear", "4x4"]
-      @fuel_type = ["Petrol", "Diesel", "GPL", "Gas + GPL", "Electric", "Hybrid"]
+      @fuel_type = ["Petrol", "Diesel", "GPL", "Petrol + GPL", "Electric", "Hybrid"]
     end
 
 end

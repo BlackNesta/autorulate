@@ -8,10 +8,13 @@
   %h4.content= "Year: #{@post.year}"
   .specs 
     %h4.spec.content= "Location: #{@post.location || '-' }"
+    %h4.spec.content= "Body: #{@post.body}"
     %h4.spec.content= "Brand: #{@post.brand}"
     %h4.spec.content= "Model: #{@post.model || '-' }"
     %h4.spec.content= "KM: #{@post.mileage}"
     %h4.spec.content= "Fuel: #{@post.fuel}"
+    %h4.spec.content= "Engine Displacement (cc): #{@post.cc}"
+    %h4.spec.content= "Horsepower: #{@post.power}"
     %h4.spec.content= "Gearbox: #{@post.gearbox}"
     %h4.spec.content= "Transmition: #{@post.transmition}"
   
