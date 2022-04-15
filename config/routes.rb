@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     member do
       patch :unban
       patch :ban
+      resources :chatrooms
     end
   end
 
