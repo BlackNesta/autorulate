@@ -32,7 +32,7 @@ class PriceModel < Eps::Base
   end
 
   def predict(car)
-    model.predict(features(car))
+    model.predict(features(car)).to_i
   end
 
   private

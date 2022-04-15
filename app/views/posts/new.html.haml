@@ -7,7 +7,7 @@
   = f.text_field :title, class: "form-control", autocomplete: "off", required: true
 
   = f.label :location
-  = f.text_field :location, class: "form-control", autocomplete: "off"
+  = f.text_field :location, class: "form-control", autocomplete: "off", required: true
 
   = f.label :body
   = f.select :body, options_for_select(@body_type), class: "form-control"
@@ -16,13 +16,10 @@
   = f.text_field :brand, class: "form-control", autocomplete: "off", required: true
 
   = f.label :model
-  = f.text_field :model, class: "form-control", autocomplete: "off"
+  = f.text_field :model, class: "form-control", autocomplete: "off", required: true
 
   = f.label :year
   = f.number_field :year, class: "form-control", autocomplete: "off", required: true
-
-  = f.label "Price(€)"
-  = f.number_field :price, class: "form-control", autocomplete: "off", required: true
 
   = f.label :km
   = f.number_field :mileage, class: "form-control", autocomplete: "off", required: true
@@ -42,6 +39,14 @@
   = f.label :gearbox_type
   = f.select :gearbox, options_for_select(@gearbox_type), class: "form-control"
 
+  = link_to "Evaluate Car", "#", class: "btn btn-primary", remote: true
+  
+  %br
+  %br
+
+  = f.label "Price(€)"
+  = f.number_field :price, class: "form-control", autocomplete: "off", required: true, id: "price_field"
+
   = f.label :descritpion
   .field 
     = f.text_area :content, placeholder: "Add description...", class: "form-control", autocomplete: "off"
@@ -51,6 +56,7 @@
       .image
         = image_tag("add-photo.png", size: "200x200", id: "image-#{i}", onclick: "addPhoto(#{i})", style: "cursor:pointer")
         = f.file_field "images[#{i}]", multiple: false, accept: "image/jpeg,image/gif,image/png", class: "post_images", style: "display:none", id: "post-images-#{i}", onchange:"readURL(this, #{i})"
+  
   = f.submit "Add Post", class: "btn btn-primary"
 
 :javascript
