@@ -32,8 +32,5 @@ Rails.application.routes.draw do
       post :add_to_favorites
       delete :remove_from_favorites
     end
-    collection do 
-      get :predict_price
-    end
   end
 end

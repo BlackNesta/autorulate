@@ -39,11 +39,6 @@
   = f.label :gearbox_type
   = f.select :gearbox, options_for_select(@gearbox_type), class: "form-control"
 
-  = link_to "Evaluate Car", "#", class: "btn btn-primary", remote: true
-  
-  %br
-  %br
-
   = f.label "Price(€)"
   = f.number_field :price, class: "form-control", autocomplete: "off", required: true, id: "price_field"
 
