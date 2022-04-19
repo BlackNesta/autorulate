@@ -39,17 +39,17 @@ class PriceModel < Eps::Base
 
   def features(car)
     {
-      brand: car.brand,
-      model: car.model,
-      year: car.year.to_i,
-      mileage: car.mileage.to_i,
-      fuel: car.fuel,
-      power: car.power.to_i,
-      cc: car.cc.to_i,
-      transmition: car.transmition,
-      gearbox: car.gearbox,
-      body: car.body,
-      price: car.price.to_i
+      brand: car[:brand],
+      model: car[:model],
+      year: car[:year].to_i,
+      mileage: car[:mileage].to_i,
+      fuel: car[:fuel],
+      power: car[:power].to_i,
+      cc: car[:cc].to_i,
+      transmition: car[:transmition],
+      gearbox: car[:gearbox],
+      body: car[:body],
+      price: car[:price].to_i
     }
   end
   

@@ -1,2 +1,0 @@
-class CarValuationsController < ApplicationController
-end

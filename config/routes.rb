@@ -33,4 +33,6 @@ Rails.application.routes.draw do
       delete :remove_from_favorites
     end
   end
+
+  resources :car_evaluations, only: [:new, :create]
 end
