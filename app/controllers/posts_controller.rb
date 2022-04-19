@@ -51,6 +51,18 @@ class PostsController < ApplicationController
     UserFavoriteCar.find_by(post_id: params[:id]).destroy
   end
 
+  def filter
+    @posts = Post.all
+    filters = params[:post]
+    @posts = @posts.where(brand: filter[:brand]) if filter[:brand].present?
+    @posts = @posts.where(model: filter[:model]) if filter[:model].present?
+    @posts = @posts.where(fuele: filter[:fuel]) if filter[:fuel].present?
+    @posts = @posts.where(transmition: filter[:transmition]) if filter[:transmition].present?
+    @posts = @posts.where(gearbox: filter[:gearbox]) if filter[:gearbox].present?
+    @posts = @posts.where(gearbox: filter[:body]) if filter[:body].present?
+    
+  end
+
   private
 
     def post_params

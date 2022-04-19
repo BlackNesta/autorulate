@@ -1,0 +1,42 @@
+= form_for(:post, url: filter_posts_path, method: :get, local: true, remote: true) do |f|
+  
+  = f.label :brand
+  %span= f.text_field :brand, class: "form-control", autocomplete: "off"
+
+  = f.label :model
+  %span= f.text_field :model, class: "form-control", autocomplete: "off"
+
+  = f.label :body_type
+  %span= f.select :body, options_for_select(@fuel_type), class: "form-control", include_blank: true
+
+  = f.label :fuel_type
+  %span= f.select :fuel, options_for_select(@fuel_type), class: "form-control", include_blank: true
+
+  = f.label :transmition_type
+  %span= f.select :transmition, options_for_select(@transmition_type), class: "form-control", include_blank: true
+
+  = f.label :gearbox_type
+  %span= f.select :gearbox, options_for_select(@gearbox_type), class: "form-control", include_blank: true
+
+  = f.label :min_year
+  %span= f.number_field :min_year, class: "form-control", autocomplete: "off"
+
+  = f.label :max_year
+  %span= f.number_field :max_year, class: "form-control", autocomplete: "off"
+
+  = f.label :min_cc
+  %span= f.number_field :min_cc, class: "form-control", autocomplete: "off"
+
+  = f.label :max_cc
+  %span= f.number_field :max_cc, class: "form-control", autocomplete: "off"
+
+
+  = f.label :min_horsepower
+  %span= f.number_field :min_horsepower, class: "form-control", autocomplete: "off"
+
+  = f.label :max_horsepower
+  %span= f.number_field :max_horsepower, class: "form-control", autocomplete: "off"
+
+  
+
+  = f.submit "Apply Filters", class: "btn btn-primary"

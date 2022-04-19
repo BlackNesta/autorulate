@@ -32,6 +32,9 @@ Rails.application.routes.draw do
       post :add_to_favorites
       delete :remove_from_favorites
     end
+    collection do
+      get :filter
+    end
   end
 
   resources :car_evaluations, only: [:new, :create]

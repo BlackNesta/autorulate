@@ -1,10 +1,12 @@
 = provide(:title, "Home")
 
 .row
-  - if logged_in?
-    %aside.col-md-4
+  %aside.col-md-3
+    - if logged_in?
       %section.user_info
         = render 'shared/user_info'
+    %section.user_info
+      = render 'shared/filters'
   .col-md-8
     = render 'shared/feed'  
     
