@@ -1,0 +1,40 @@
+= provide(:title, "Evaluate Car")
+
+%h1 Evaluate Car
+
+
+= form_for(:car, url: car_evaluations_path, method: :post, local: true, remote: true) do |f|
+
+  = f.label :body
+  = f.select :body, options_for_select(@body_type), class: "form-control"
+
+  = f.label :brand
+  = f.text_field :brand, class: "form-control", autocomplete: "off", required: true
+
+  = f.label :model
+  = f.text_field :model, class: "form-control", autocomplete: "off", required: true
+
+  = f.label :year
+  = f.number_field :year, class: "form-control", autocomplete: "off", required: true
+
+  = f.label :km
+  = f.number_field :mileage, class: "form-control", autocomplete: "off", required: true
+
+  = f.label :fuel_type
+  = f.select :fuel, options_for_select(@fuel_type), class: "form-control", required: true
+
+  = f.label "Engine Displacement (cc)"
+  = f.number_field :cc, class: "form-control", autocomplete: "off", required: true
+
+  = f.label :horsepower
+  = f.number_field :power, class: "form-control", autocomplete: "off", required: true
+
+  = f.label :transmition_type
+  = f.select :transmition, options_for_select(@transmition_type), class: "form-control"
+
+  = f.label :gearbox_type
+  = f.select :gearbox, options_for_select(@gearbox_type), class: "form-control"
+
+  = f.submit "Evaluate Car", class: "btn btn-primary"
+
+.evaluation

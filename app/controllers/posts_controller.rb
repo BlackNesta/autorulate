@@ -51,10 +51,6 @@ class PostsController < ApplicationController
     UserFavoriteCar.find_by(post_id: params[:id]).destroy
   end
 
-  def predict_price
-    binding.pry
-  end
-
   private
 
     def post_params
