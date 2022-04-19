@@ -53,14 +53,20 @@ class PostsController < ApplicationController
 
   def filter
     @posts = Post.all
-    filters = params[:post]
-    @posts = @posts.where(brand: filter[:brand]) if filter[:brand].present?
-    @posts = @posts.where(model: filter[:model]) if filter[:model].present?
+    filter = params[:specs]
+    @posts = @posts.where(brand: filter[:brand].capitalize) if filter[:brand].present?
+    @posts = @posts.where(model: filter[:model].capitalize) if filter[:model].present?
     @posts = @posts.where(fuele: filter[:fuel]) if filter[:fuel].present?
     @posts = @posts.where(transmition: filter[:transmition]) if filter[:transmition].present?
     @posts = @posts.where(gearbox: filter[:gearbox]) if filter[:gearbox].present?
-    @posts = @posts.where(gearbox: filter[:body]) if filter[:body].present?
-    
+    @posts = @posts.where(body: filter[:body]) if filter[:body].present?
+    @posts = @posts.where('year >= ?', filter[:min_year]) if filter[:min_year].present?
+    @posts = @posts.where('year <= ?', filter[:max_year]) if filter[:max_year].present?
+    @posts = @posts.where('cc >= ?', filter[:min_cc]) if filter[:min_cc].present?
+    @posts = @posts.where('cc <= ?', filter[:max_cc]) if filter[:max_cc].present?
+    @posts = @posts.where('power >= ?', filter[:min_horsepower])  if filter[:min_horsepower].present?
+    @posts = @posts.where('power <= ?', filter[:max_horsepower])  if filter[:max_horsepower].present?
+    @posts = @posts.paginate(page: 1)
   end
 
   private
