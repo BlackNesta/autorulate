@@ -3,7 +3,7 @@ module PostsHelper
     image.variant(resize_to_limit: [size, size])
   end
 
-  def resize_to_fill(image, w = 450, h = 350)
+  def resize_to_fill(image, w = 425, h = 250)
     image.variant(resize_to_fill: [w, h])
   end
 

@@ -53,9 +53,9 @@
   .images
     - (1..10).each do |i|
       .image
-        = image_tag("add-photo.png", size: "200x200", id: "image-#{i}", onclick: "addPhoto(#{i})", style: "cursor:pointer")
+        = image_tag("add-photo.png", id: "image-#{i}", onclick: "addPhoto(#{i})", style: "width: 200px; height: 200px; cursor:pointer;")
         = f.file_field "images[#{i}]", multiple: false, accept: "image/jpeg,image/gif,image/png", class: "post_images", style: "display:none", id: "post-images-#{i}", onchange:"readURL(this, #{i})"
-  %br
+  
   = f.submit "Add Post", class: "btn btn-primary"
 
 :javascript
@@ -77,8 +77,6 @@
       reader.onload = function (e) {
         $('#image-' + i)
           .attr('src', e.target.result)
-          .maxidth(200)
-          .height(200);
       };
 
       reader.readAsDataURL(input.files[0]);

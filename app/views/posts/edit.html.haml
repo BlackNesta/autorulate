@@ -57,7 +57,7 @@
         - img = @post.images[i] if @post.images[i].present?
         - field_value = ""
         - field_value = @post.images[i] if @post.images[i].present?
-        = image_tag(img, size: "200x200", id: "image-#{i}", onclick: "addPhoto(#{i})", style: "cursor:pointer")
+        = image_tag(img, id: "image-#{i}", onclick: "addPhoto(#{i})", style: "width: 200px; height: 200px; cursor:pointer;")
         = f.file_field "images[#{i}]", multiple: false, accept: "image/jpeg,image/gif,image/png", class: "post_images", style: "display:none", id: "post-images-#{i}", onchange:"readURL(this, #{i})"
   %br
   = f.submit "Edit Post", class: "btn btn-primary"
