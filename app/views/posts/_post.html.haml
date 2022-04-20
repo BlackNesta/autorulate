@@ -18,6 +18,7 @@
       .content= "Transmition: #{post.transmition}"
       .content= "CC: #{post.cc}"
       .content= "HP: #{post.power}"
+      .content= "Price: #{post.price}€"
       .content= "Posted #{time_ago_in_words(post.created_at)} ago."
       .content
         - if logged_in?
