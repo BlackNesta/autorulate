@@ -10,7 +10,7 @@
   = f.text_field :location, class: "form-control", autocomplete: "off", required: true
 
   = f.label :body
-  = f.select :body, options_for_select(@body_type), class: "form-control"
+  = f.select(:body, options_for_select(@body_type), {}, class: "form-control")
 
   = f.label :brand
   = f.text_field :brand, class: "form-control", autocomplete: "off", required: true
@@ -25,7 +25,7 @@
   = f.number_field :mileage, class: "form-control", autocomplete: "off", required: true
 
   = f.label :fuel_type
-  = f.select :fuel, options_for_select(@fuel_type), class: "form-control", required: true
+  = f.select :fuel, options_for_select(@fuel_type), {}, class: "form-control"
 
   = f.label "Engine Displacement (cc)"
   = f.number_field :cc, class: "form-control", autocomplete: "off", required: true
@@ -34,10 +34,10 @@
   = f.number_field :power, class: "form-control", autocomplete: "off", required: true
 
   = f.label :transmition_type
-  = f.select :transmition, options_for_select(@transmition_type), class: "form-control"
+  = f.select :transmition, options_for_select(@transmition_type), {}, class: "form-control"
 
   = f.label :gearbox_type
-  = f.select :gearbox, options_for_select(@gearbox_type), class: "form-control"
+  = f.select :gearbox, options_for_select(@gearbox_type), {}, class: "form-control"
 
   = f.label "Price(€)"
   = f.number_field :price, class: "form-control", autocomplete: "off", required: true, id: "price_field"
