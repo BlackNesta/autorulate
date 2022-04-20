@@ -1,27 +1,36 @@
 %li{ id: "post#{post.id}" }
   = link_to gravatar_for(post.user, size: 50), post.user
-  %span.post_title= link_to post.title, post_path(post)
-  %span.content= "Brand: #{post.brand}"
-  %span.content= "Model: #{post.model}"
-  %span.content= "Year: #{post.year}"
-  %span.content= "Km: #{post.mileage}"
-  - if post.images.attached?
-    = link_to image_tag(display_image(post.images.first)), post_path(post)
-  %span.timestamp
-    = "Posted #{time_ago_in_words(post.created_at)} ago."
-    - if logged_in?
-      - if current_user?(post.user) || current_user.admin?
-        = link_to raw("<i class='fas fa-edit'></i> <span> Edit </span>"), edit_post_path(post)
-        = " | "
-        = link_to raw("<i class='fa fa-trash' aria-hidden='true'></i> <span> Delete </span>"), post ,method: :delete, data: { confirm: "You sure?" }
-      - else
-        %span
-        - if !current_user.favorites.include?(post)
-          = link_to raw("<i class='far fa-star'></i> <span> Add to Favorites </span>"), add_to_favorites_post_path(post), method: :post, remote: true, class: "add-post-#{post.id}", onclick: "addToFavorites(#{post.id})"
-          = link_to raw("<i class='fa fa-star favorite'></i> <span> Remove from Favorites </span>"), remove_from_favorites_post_path(post), method: :delete, remote: true, class: "remove-post-#{post.id} hidden", onclick: "removeFromFavorites(#{post.id})"
-        - else
-          = link_to raw("<i class='far fa-star'></i> <span> Add to Favorites </span>"), add_to_favorites_post_path(post), method: :post, remote: true, class: "add-post-#{post.id} hidden", onclick: "addToFavorites(#{post.id})"
-          = link_to raw("<i class='fa fa-star favorite'></i> <span> Remove from Favorites </span>"), remove_from_favorites_post_path(post), method: :delete, remote: true, class: "remove-post-#{post.id}", onclick: "removeFromFavorites(#{post.id})"
+  %span 
+    %h4.post-title= link_to post.title, post_path(post)
+  .car-items
+    .car-info
+      - if post.images.attached?
+        .content= link_to image_tag(display_image(post.images.first)), post_path(post)
+    .car-info
+      .content= "Brand: #{post.brand}"
+      .content= "Model: #{post.model}"
+      .content= "Year: #{post.year}"
+      .content= "Km: #{post.mileage}"
+      .content= "Fuel: #{post.fuel}"
+      .content= "Gearbox: #{post.gearbox}"
+      .content= "Transmition: #{post.transmition}"
+      .content= "CC: #{post.cc}"
+      .content= "HP: #{post.power}"
+      .content= "Posted #{time_ago_in_words(post.created_at)} ago."
+      .content
+        - if logged_in?
+          - if current_user?(post.user) || current_user.admin?
+            = link_to raw("<i class='fas fa-edit'></i> <span> Edit </span>"), edit_post_path(post)
+            = " | "
+            = link_to raw("<i class='fa fa-trash' aria-hidden='true'></i> <span> Delete </span>"), post ,method: :delete, data: { confirm: "You sure?" }
+          - else
+            %span
+            - if !current_user.favorites.include?(post)
+              = link_to raw("<i class='far fa-star'></i> <span> Add to Favorites </span>"), add_to_favorites_post_path(post), method: :post, remote: true, class: "add-post-#{post.id}", onclick: "addToFavorites(#{post.id})"
+              = link_to raw("<i class='fa fa-star favorite'></i> <span> Remove from Favorites </span>"), remove_from_favorites_post_path(post), method: :delete, remote: true, class: "remove-post-#{post.id} hidden", onclick: "removeFromFavorites(#{post.id})"
+            - else
+              = link_to raw("<i class='far fa-star'></i> <span> Add to Favorites </span>"), add_to_favorites_post_path(post), method: :post, remote: true, class: "add-post-#{post.id} hidden", onclick: "addToFavorites(#{post.id})"
+              = link_to raw("<i class='fa fa-star favorite'></i> <span> Remove from Favorites </span>"), remove_from_favorites_post_path(post), method: :delete, remote: true, class: "remove-post-#{post.id}", onclick: "removeFromFavorites(#{post.id})"
 
 :javascript
   function addToFavorites(id) {

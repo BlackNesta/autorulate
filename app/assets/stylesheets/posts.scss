@@ -8,15 +8,10 @@
     padding: 10px 0;
     border-top: 1px solid #e8e8e8;
   }
-  .post_title {
-    margin-top: 5em;
-    padding-top: 0;
-  }
   .content {
     display: block;
-    margin-left: 60px;
+    position: relative;
     img {
-      display: block;
       padding: 5px 0;
     }
   }
@@ -80,4 +75,12 @@ span.filter {
   display: block;
   overflow: hidden;
   padding: 0px 4px 0px 6px;
+}
+
+.car-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  gap: 30px;
+  align-items: center;
 }
