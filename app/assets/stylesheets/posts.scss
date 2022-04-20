@@ -42,11 +42,11 @@ span.image {
 .images {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-content: center;
+  align-items: center;
 }
 .image {
   margin: 10px;
+  flex-shrink: 3;
 }
 
 img.hover-shadow {
@@ -60,11 +60,12 @@ img.hover-shadow {
 .specs {
   display: flex;
   flex-wrap: wrap;
-  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .spec {
-  margin: 10px;
+  margin-right: 25px;
 }
 
 label {
