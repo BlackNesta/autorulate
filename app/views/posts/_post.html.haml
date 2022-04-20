@@ -1,7 +1,10 @@
 %li{ id: "post#{post.id}" }
   = link_to gravatar_for(post.user, size: 50), post.user
   %span.post_title= link_to post.title, post_path(post)
-  %span.content= post.content
+  %span.content= "Brand: #{post.brand}"
+  %span.content= "Model: #{post.model}"
+  %span.content= "Year: #{post.year}"
+  %span.content= "Km: #{post.mileage}"
   - if post.images.attached?
     = link_to image_tag(display_image(post.images.first)), post_path(post)
   %span.timestamp

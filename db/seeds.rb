@@ -1,5 +1,5 @@
 # Create a main sample user.
-User.create!(name: "Example User",
+User.create!(name: "ADMIN",
   email: "admin@autorulate.herokuapp.com",
   password: "admin123",
   password_confirmation: "admin123",
