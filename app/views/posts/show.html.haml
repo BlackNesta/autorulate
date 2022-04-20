@@ -12,8 +12,8 @@
         %h2= @post.title
       %h4.content= "Price: #{@post.price}"
       %h4.content= "Year: #{@post.year}"
+      %h4.content= "Location: #{@post.location || '-' }"
       .specs 
-        %h4.spec.content= "Location: #{@post.location || '-' }"
         %h4.spec.content= "Body: #{@post.body}"
         %h4.spec.content= "Brand: #{@post.brand}"
         %h4.spec.content= "Model: #{@post.model || '-' }"
@@ -23,15 +23,15 @@
         %h4.spec.content= "Horsepower: #{@post.power}"
         %h4.spec.content= "Gearbox: #{@post.gearbox}"
         %h4.spec.content= "Transmition: #{@post.transmition}"
-      
-      %h4.content= "Description:" 
-      %h5.content= @post.content
-
-      - if current_user?(@post.user) || current_user.admin?
-        .content
-          = link_to raw("<i class='fas fa-edit'></i> <span> Edit </span>"), edit_post_path(@post)
-          = " | "
-          = link_to raw("<i class='fa fa-trash' aria-hidden='true'></i> <span> Delete </span>"), @post ,method: :delete, data: { confirm: "You sure?" }
+      - if @post.content.present?
+        %h4.content= "Description:" 
+        %h5.content= @post.content
+      - if current_user.present?
+        - if current_user?(@post.user) || current_user.admin?
+          .content
+            = link_to raw("<i class='fas fa-edit'></i> <span> Edit </span>"), edit_post_path(@post)
+            = " | "
+            = link_to raw("<i class='fa fa-trash' aria-hidden='true'></i> <span> Delete </span>"), @post ,method: :delete, data: { confirm: "You sure?" }
 
       - if @post.images.attached?
         .images  

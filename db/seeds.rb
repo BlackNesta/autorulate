@@ -1,8 +1,8 @@
 # Create a main sample user.
 User.create!(name: "Example User",
-  email: "example@railstutorial.org",
-  password: "foobar",
-  password_confirmation: "foobar",
+  email: "admin@autorulate.herokuapp.com",
+  password: "admin123",
+  password_confirmation: "admin123",
   admin: true,
   activated: true,
   activated_at: Time.zone.now
@@ -21,9 +21,24 @@ User.create!(name: "Example User",
   )
 end
 
-users = User.order(:created_at).take(6)
-50.times do
-  title = Faker::Lorem.characters(number: 10)
-  content = Faker::Lorem.sentence(word_count: 5)
-  users.each { |user| user.posts.create!(title: title ,content: content) }
+users = User.all
+cars = File.open("app/ml_models/cars_dataset.csv")
+cars.readlines.each do |c|
+  car = c.split(",")
+  post = {
+    brand: car[0],
+    model: car[1],
+    year: car[2].to_i,
+    mileage: car[3].to_i,
+    fuel: car[4],
+    power: car[5].to_i,
+    cc: car[6].to_i,
+    transmition: car[7],
+    gearbox: car[8],
+    body: car[10],
+    price: car[11].strip.to_i
+  }
+  post[:title] = car[0] + " " + car[1]
+  post[:location] = Faker::Address.city
+  users.sample.posts.create!(post)
 end
