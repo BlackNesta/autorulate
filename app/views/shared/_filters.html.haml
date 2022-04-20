@@ -1,40 +1,40 @@
 = form_for(:specs, url: filter_posts_path, method: :get, local: true ,remote: true) do |f|
   
   = f.label :brand
-  %span.filter= f.text_field :brand, class: "form-control", autocomplete: "off"
+  %span.filter= f.text_field :brand, class: "form-control", autocomplete: "off", value: params[:specs].try(:[], :brand)
 
   = f.label :model
-  %span.filter= f.text_field :model, class: "form-control", autocomplete: "off"
+  %span.filter= f.text_field :model, class: "form-control", autocomplete: "off", value: params[:specs].try(:[], :model)
 
   = f.label :body_type
-  %span.filter= f.select :body, options_for_select(@fuel_type), class: "form-control", include_blank: true
+  %span.filter= f.select :body, options_for_select(@fuel_type), class: "form-control", include_blank: true, value: params[:specs].try(:[], :body)
 
   = f.label :fuel_type
-  %span.filter= f.select :fuel, options_for_select(@fuel_type), class: "form-control", include_blank: true
+  %span.filter= f.select :fuel, options_for_select(@fuel_type), class: "form-control", include_blank: true, value: params[:specs].try(:[], :fuel)
 
   = f.label :transmition_type
-  %span.filter= f.select :transmition, options_for_select(@transmition_type), class: "form-control", include_blank: true
+  %span.filter= f.select :transmition, options_for_select(@transmition_type), class: "form-control", include_blank: true, value: params[:specs].try(:[], :transmition)
 
   = f.label :gearbox_type
-  %span.filter= f.select :gearbox, options_for_select(@gearbox_type), class: "form-control", include_blank: true
+  %span.filter= f.select :gearbox, options_for_select(@gearbox_type), class: "form-control", include_blank: true, value: params[:specs].try(:[], :gearbox)
 
   = f.label :min_year
-  %span.filter= f.number_field :min_year, class: "form-control", autocomplete: "off"
+  %span.filter= f.number_field :min_year, class: "form-control", autocomplete: "off", value: params[:specs].try(:[], :min_year)
 
   = f.label :max_year
-  %span.filter= f.number_field :max_year, class: "form-control", autocomplete: "off"
+  %span.filter= f.number_field :max_year, class: "form-control", autocomplete: "off", value: params[:specs].try(:[], :max_year)
 
   = f.label :min_cc
-  %span.filter= f.number_field :min_cc, class: "form-control", autocomplete: "off"
+  %span.filter= f.number_field :min_cc, class: "form-control", autocomplete: "off", value: params[:specs].try(:[], :min_cc)
 
   = f.label :max_cc
-  %span.filter= f.number_field :max_cc, class: "form-control", autocomplete: "off"
+  %span.filter= f.number_field :max_cc, class: "form-control", autocomplete: "off", value: params[:specs].try(:[], :max_cc)
 
 
   = f.label :min_horsepower
-  %span.filter= f.number_field :min_horsepower, class: "form-control", autocomplete: "off"
+  %span.filter= f.number_field :min_horsepower, class: "form-control", autocomplete: "off", value: params[:specs].try(:[], :min_horsepower)
 
   = f.label :max_horsepower
-  %span.filter= f.number_field :max_horsepower, class: "form-control", autocomplete: "off"
+  %span.filter= f.number_field :max_horsepower, class: "form-control", autocomplete: "off", value: params[:specs].try(:[], :max_horsepower)
 
   = f.submit "Apply Filters", class: "btn btn-primary"

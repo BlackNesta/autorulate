@@ -1,2 +1,5 @@
 $("ol.posts").empty()
-$("ol.posts").append("#{ j render @posts}")
+$("div.pagination").empty()
+- if @feed_items.any?
+  $("ol.posts").append("#{ j render @feed_items}")
+  $("div.pagination").html("#{ j will_paginate @feed_items }")

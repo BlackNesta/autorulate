@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
   before_action :correct_user, only: :destroy
   before_action :load_post, only: [:show, :edit, :update]
-  before_action :load_post_fields, only: [:new, :edit]
+  before_action :load_post_fields, only: [:new, :edit, :filter]
   
   def show
   end
@@ -52,21 +52,21 @@ class PostsController < ApplicationController
   end
 
   def filter
-    @posts = Post.all
+    @feed_items = Post.all
     filter = params[:specs]
-    @posts = @posts.where(brand: filter[:brand].capitalize) if filter[:brand].present?
-    @posts = @posts.where(model: filter[:model].capitalize) if filter[:model].present?
-    @posts = @posts.where(fuele: filter[:fuel]) if filter[:fuel].present?
-    @posts = @posts.where(transmition: filter[:transmition]) if filter[:transmition].present?
-    @posts = @posts.where(gearbox: filter[:gearbox]) if filter[:gearbox].present?
-    @posts = @posts.where(body: filter[:body]) if filter[:body].present?
-    @posts = @posts.where('year >= ?', filter[:min_year]) if filter[:min_year].present?
-    @posts = @posts.where('year <= ?', filter[:max_year]) if filter[:max_year].present?
-    @posts = @posts.where('cc >= ?', filter[:min_cc]) if filter[:min_cc].present?
-    @posts = @posts.where('cc <= ?', filter[:max_cc]) if filter[:max_cc].present?
-    @posts = @posts.where('power >= ?', filter[:min_horsepower])  if filter[:min_horsepower].present?
-    @posts = @posts.where('power <= ?', filter[:max_horsepower])  if filter[:max_horsepower].present?
-    @posts = @posts.paginate(page: 1)
+    @feed_items = @feed_items.where(brand: filter[:brand].capitalize) if filter[:brand].present?
+    @feed_items = @feed_items.where(model: filter[:model].capitalize) if filter[:model].present?
+    @feed_items = @feed_items.where(fuele: filter[:fuel]) if filter[:fuel].present?
+    @feed_items = @feed_items.where(transmition: filter[:transmition]) if filter[:transmition].present?
+    @feed_items = @feed_items.where(gearbox: filter[:gearbox]) if filter[:gearbox].present?
+    @feed_items = @feed_items.where(body: filter[:body]) if filter[:body].present?
+    @feed_items = @feed_items.where('year >= ?', filter[:min_year]) if filter[:min_year].present?
+    @feed_items = @feed_items.where('year <= ?', filter[:max_year]) if filter[:max_year].present?
+    @feed_items = @feed_items.where('cc >= ?', filter[:min_cc]) if filter[:min_cc].present?
+    @feed_items = @feed_items.where('cc <= ?', filter[:max_cc]) if filter[:max_cc].present?
+    @feed_items = @feed_items.where('power >= ?', filter[:min_horsepower])  if filter[:min_horsepower].present?
+    @feed_items = @feed_items.where('power <= ?', filter[:max_horsepower])  if filter[:max_horsepower].present?
+    @feed_items = @feed_items.paginate(page: params[:page])
   end
 
   private

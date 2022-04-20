@@ -1,0 +1,13 @@
+= provide(:title, "Home")
+
+.row
+  %aside.col-md-3
+    - if logged_in?
+      %section.user_info
+        = render 'shared/user_info'
+    %section.user_info
+      = render 'shared/filters'
+  .col-md-9
+    = render 'shared/feed'  
+    
+    
