@@ -2,39 +2,41 @@
 
 %h1 Evaluate Car
 
+%br
 
 = form_for(:car, url: car_evaluations_path, method: :post, local: true, remote: true) do |f|
-
-  = f.label :body
-  = f.select(:body, @body_type, {}, class: "form-control")
-
-  = f.label :brand
-  = f.text_field :brand, class: "form-control", autocomplete: "off", required: true
-
-  = f.label :model
-  = f.text_field :model, class: "form-control", autocomplete: "off", required: true
-
-  = f.label :year
-  = f.number_field :year, class: "form-control", autocomplete: "off", required: true
-
-  = f.label :km
-  = f.number_field :mileage, class: "form-control", autocomplete: "off", required: true
-
-  = f.label :fuel_type
-  = f.select(:fuel, @fuel_type, {}, class: "form-control")
-
-  = f.label "Engine Displacement (cc)"
-  = f.number_field :cc, class: "form-control", autocomplete: "off", required: true
-
-  = f.label :horsepower
-  = f.number_field :power, class: "form-control", autocomplete: "off", required: true
-
-  = f.label :transmition_type
-  = f.select(:transmition, @transmition_type, {}, class: "form-control")
-
-  = f.label :gearbox_type
-  = f.select(:gearbox, @gearbox_type, {}, class: "form-control")
-
+  .form_fileds 
+    .form_field
+      = f.label :body
+      %span.filter= f.select(:body, @body_type, {}, class: "form-control big-form")
+    .form_field
+      = f.label :brand
+      %span.filter= f.text_field :brand, class: "form-control", autocomplete: "off", required: true
+    .form_field
+      = f.label :model
+      %span.filter= f.text_field :model, class: "form-control", autocomplete: "off", required: true
+    .form_field
+      = f.label :year
+      %span.filter= f.number_field :year, class: "form-control", autocomplete: "off", required: true
+    .form_field
+      = f.label :km
+      %span.filter= f.number_field :mileage, class: "form-control", autocomplete: "off", required: true
+    .form_field
+      = f.label :fuel_type
+      %span.filter= f.select(:fuel, @fuel_type, {}, class: "form-control big-form")
+    .form_field
+      = f.label "Engine Displacement (cc)"
+      %span.filter= f.number_field :cc, class: "form-control", autocomplete: "off", required: true
+    .form_field
+      = f.label :horsepower
+      %span.filter= f.number_field :power, class: "form-control", autocomplete: "off", required: true
+    .form_field
+      = f.label :transmition_type
+      %span.filter= f.select(:transmition, @transmition_type, {}, class: "form-control big-form")
+    .form_field
+      = f.label :gearbox_type
+      %span.filter= f.select(:gearbox, @gearbox_type, {}, class: "form-control big-form")
+  %br
   = f.submit "Evaluate Car", class: "btn btn-primary"
 
 .evaluation

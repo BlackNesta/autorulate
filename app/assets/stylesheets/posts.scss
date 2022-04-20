@@ -84,3 +84,16 @@ span.filter {
   gap: 30px;
   align-items: center;
 }
+
+.form_fileds {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.form_field{
+  margin-left: 10px;
+}
+
+select.big-form{
+  width: 182px;
+}
