@@ -34,9 +34,51 @@
             = link_to raw("<i class='fas fa-edit'></i> <span> Edit </span>"), edit_post_path(@post)
             = " | "
             = link_to raw("<i class='fa fa-trash' aria-hidden='true'></i> <span> Delete </span>"), @post ,method: :delete, data: { confirm: "You sure?" }
-
+    -#  
       - if @post.images.attached?
         .images  
           - @post.images.each_with_index do |p, i| 
             .image
               = image_tag(display_image(p), onclick: "openModal(); currentSlide(#{i + 1})", class: "hover-shadow")
+    - if @post.images.attached?
+      .slideshow-container
+        - @post.images.each_with_index do |p, i| 
+          .mySlides
+            .numbertext= "#{i + 1}/#{@post.images.size}"
+            = image_tag(display_image(p, 850))
+        %a.prev{:onclick => "plusSlides(-1)"} ❮
+        %a.next{:onclick => "plusSlides(1)"} ❯
+      %div{ style: "text-align:center"}
+        - @post.images.each_with_index do |p, i| 
+          %span.dot{onclick: "currentSlide(#{i + 1})"}
+
+:javascript
+  let slideIndex = 1;
+  showSlides(slideIndex);
+
+  // Next/previous controls
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  // Thumbnail image controls
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+  }
+
