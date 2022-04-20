@@ -5,7 +5,7 @@
   .car-items
     .car-info
       - if post.images.attached?
-        .content= link_to image_tag(display_image(post.images.first)), post_path(post)
+        .content= link_to image_tag(resize_to_fill(post.images.first)), post_path(post)
     .car-info
       .content= "Brand: #{post.brand}"
       .content= "Model: #{post.model}"
