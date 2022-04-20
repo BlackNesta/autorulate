@@ -1,34 +1,40 @@
 = provide(:title, @post.title)
 
-= link_to gravatar_for(@post.user, size: 50), @post.user
-.posts
-  %span.post_title
-    %h2= @post.title
-  %h4.content= "Price: #{@post.price}"
-  %h4.content= "Year: #{@post.year}"
-  .specs 
-    %h4.spec.content= "Location: #{@post.location || '-' }"
-    %h4.spec.content= "Body: #{@post.body}"
-    %h4.spec.content= "Brand: #{@post.brand}"
-    %h4.spec.content= "Model: #{@post.model || '-' }"
-    %h4.spec.content= "KM: #{@post.mileage}"
-    %h4.spec.content= "Fuel: #{@post.fuel}"
-    %h4.spec.content= "Engine Displacement (cc): #{@post.cc}"
-    %h4.spec.content= "Horsepower: #{@post.power}"
-    %h4.spec.content= "Gearbox: #{@post.gearbox}"
-    %h4.spec.content= "Transmition: #{@post.transmition}"
-  
-  %h4.content= "Description:" 
-  %h5.content= @post.content
+.row
+  %aside.col-md-2
+    = link_to gravatar_for(@post.user, size: 50), @post.user
+    %br
+    = @post.user.name
+    = @post.user.email
+  .col-md-10
+    .posts
+      %span.post_title
+        %h2= @post.title
+      %h4.content= "Price: #{@post.price}"
+      %h4.content= "Year: #{@post.year}"
+      .specs 
+        %h4.spec.content= "Location: #{@post.location || '-' }"
+        %h4.spec.content= "Body: #{@post.body}"
+        %h4.spec.content= "Brand: #{@post.brand}"
+        %h4.spec.content= "Model: #{@post.model || '-' }"
+        %h4.spec.content= "KM: #{@post.mileage}"
+        %h4.spec.content= "Fuel: #{@post.fuel}"
+        %h4.spec.content= "Engine Displacement (cc): #{@post.cc}"
+        %h4.spec.content= "Horsepower: #{@post.power}"
+        %h4.spec.content= "Gearbox: #{@post.gearbox}"
+        %h4.spec.content= "Transmition: #{@post.transmition}"
+      
+      %h4.content= "Description:" 
+      %h5.content= @post.content
 
-  - if current_user?(@post.user) || current_user.admin?
-    .content
-      = link_to raw("<i class='fas fa-edit'></i> <span> Edit </span>"), edit_post_path(@post)
-      = " | "
-      = link_to raw("<i class='fa fa-trash' aria-hidden='true'></i> <span> Delete </span>"), @post ,method: :delete, data: { confirm: "You sure?" }
+      - if current_user?(@post.user) || current_user.admin?
+        .content
+          = link_to raw("<i class='fas fa-edit'></i> <span> Edit </span>"), edit_post_path(@post)
+          = " | "
+          = link_to raw("<i class='fa fa-trash' aria-hidden='true'></i> <span> Delete </span>"), @post ,method: :delete, data: { confirm: "You sure?" }
 
-  - if @post.images.attached?
-    .images  
-      - @post.images.each_with_index do |p, i| 
-        .image
-          = image_tag(display_image(p), onclick: "openModal(); currentSlide(#{i + 1})", class: "hover-shadow")
+      - if @post.images.attached?
+        .images  
+          - @post.images.each_with_index do |p, i| 
+            .image
+              = image_tag(display_image(p), onclick: "openModal(); currentSlide(#{i + 1})", class: "hover-shadow")

@@ -4,7 +4,9 @@
     %section.user_info
       %h1
         = gravatar_for @user
-        = "#{@user.name}"
+        %br
+        = @user.name
+        = @user.email
   .col-md-8
     - if @user.posts.any?
       %h3= "Cars for sale: #{@user.posts.count}"
