@@ -56,7 +56,7 @@ class PostsController < ApplicationController
     filter = params[:specs]
     @feed_items = @feed_items.where(brand: filter[:brand].capitalize) if filter[:brand].present?
     @feed_items = @feed_items.where(model: filter[:model].capitalize) if filter[:model].present?
-    @feed_items = @feed_items.where(fuele: filter[:fuel]) if filter[:fuel].present?
+    @feed_items = @feed_items.where(fuel: filter[:fuel]) if filter[:fuel].present?
     @feed_items = @feed_items.where(transmition: filter[:transmition]) if filter[:transmition].present?
     @feed_items = @feed_items.where(gearbox: filter[:gearbox]) if filter[:gearbox].present?
     @feed_items = @feed_items.where(body: filter[:body]) if filter[:body].present?
@@ -93,6 +93,7 @@ class PostsController < ApplicationController
     end
 
     def load_post_fields
+      @brand =  ["Volkswagen", "Mercedes-benz", "Bmw", "Audi", "Ford", "Skoda", "Opel", "Renault", "Dacia", "Toyota", "Mazda", "Peugeot", "Hyundai", "Volvo", "Porsche", "Land rover", "Nissan", "Fiat", "Seat", "Citroen", "Kia", "Mitsubishi", "Jaguar", "Suzuki", "Lexus", "Jeep", "Honda", "Mini", "Chevrolet", "Subaru", "Alfa romeo", "Infiniti", "Smart", "Bentley", "Dodge", "Daewoo", "Saab", "Rover", "Isuzu", "Ssangyong", "Hummer", "Maserati", "Chrysler", "Rolls-royce"] 
       @body_type = ["Cabrio", "Combi", "Compact", "Coupe", "Sedan", "SUV", "Small car", "Minivan"]
       @gearbox_type = ["Manual", "Automatic"]
       @transmition_type = ["Front", "Rear", "4x4"]

@@ -1,13 +1,13 @@
 = form_for(:specs, url: filter_posts_path, method: :get, local: true ,remote: true) do |f|
   
   = f.label :brand, style: "width: 112px"
-  %span.filter= f.text_field :brand, class: "form-control", autocomplete: "off", value: params[:specs].try(:[], :brand)
+  %span.filter= f.select(:brand, @brand, {include_blank: true, value: params[:specs].try(:[], :brand)}, {class: "form-control"})
 
   = f.label :model, style: "width: 112px"
   %span.filter= f.text_field :model, class: "form-control", autocomplete: "off", value: params[:specs].try(:[], :model)
 
   = f.label :body_type, style: "width: 112px"
-  %span.filter= f.select(:body, @fuel_type, {include_blank: true, value: params[:specs].try(:[], :body)}, {class: "form-control"})
+  %span.filter= f.select(:body, @body_type, {include_blank: true, value: params[:specs].try(:[], :body)}, {class: "form-control"})
 
   = f.label :fuel_type, style: "width: 112px"
   %span.filter= f.select(:fuel, @fuel_type, {include_blank: true, value: params[:specs].try(:[], :fuel)}, {class: "form-control"})

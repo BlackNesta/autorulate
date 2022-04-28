@@ -14,10 +14,10 @@
       %span.filter= f.text_field :location, class: "form-control", autocomplete: "off"
     .form_field
       = f.label :body
-      %span.filter= f.select :body, options_for_select(@body_type), {}, class: "form-control big-form"
+      %span.filter= f.select :body, options_for_select(@body_type, @post.body), {}, class: "form-control big-form"
     .form_field
       = f.label :brand
-      %span.filter= f.text_field :brand, class: "form-control", autocomplete: "off", required: true
+      %span.filter= f.select :brand, options_for_select(@brand, @post.brand), {}, class: "form-control big-form"
     .form_field
       = f.label :model
       %span.filter= f.text_field :model, class: "form-control", autocomplete: "off"
@@ -29,7 +29,7 @@
       %span.filter= f.number_field :mileage, class: "form-control", autocomplete: "off", required: true
     .form_field
       = f.label :fuel_type
-      %span.filter= f.select :fuel, options_for_select(@fuel_type), {}, class: "form-control big-form"
+      %span.filter= f.select :fuel, options_for_select(@fuel_type, @post.fuel), {}, class: "form-control big-form"
     .form_field
       = f.label "Engine Displacement (cc)"
       %span.filter= f.number_field :cc, class: "form-control", autocomplete: "off", required: true
@@ -38,10 +38,10 @@
       %span.filter= f.number_field :power, class: "form-control", autocomplete: "off", required: true
     .form_field
       = f.label :transmition_type
-      %span.filter= f.select :transmition, options_for_select(@transmition_type), {}, class: "form-control big-form"
+      %span.filter= f.select :transmition, options_for_select(@transmition_type, @post.transmition), {}, class: "form-control big-form"
     .form_field
       = f.label :gearbox_type
-      %span.filter= f.select :gearbox, options_for_select(@gearbox_type), {}, class: "form-control big-form"
+      %span.filter= f.select :gearbox, options_for_select(@gearbox_type, @post.gearbox), {}, class: "form-control big-form"
     .form_field
       = f.label "Price(€)"
       %span.filter= f.number_field :price, class: "form-control", autocomplete: "off", required: true
