@@ -8,13 +8,13 @@
   .form_fileds 
     .form_field
       = f.label :body
-      %span.filter= f.select(:body, @body_type, {}, class: "form-control big-form")
+      %span.filter= f.select :body, options_for_select(@body_type), {include_blank: true}, {class: "form-control big-form", required: true}
     .form_field
       = f.label :brand
-      %span.filter= f.text_field :brand, class: "form-control", autocomplete: "off", required: true
+      %span.filter= f.select :brand, options_for_select(@brand), {include_blank: true}, {class: "form-control big-form", id: "brand-select", required: true}
     .form_field
       = f.label :model
-      %span.filter= f.text_field :model, class: "form-control", autocomplete: "off", required: true
+      %span.filter= f.select :model, [], {}, {class: "form-control big-form", id: "model-select", disabled: true, required: true}
     .form_field
       = f.label :year
       %span.filter= f.number_field :year, class: "form-control", autocomplete: "off", required: true
@@ -23,7 +23,7 @@
       %span.filter= f.number_field :mileage, class: "form-control", autocomplete: "off", required: true
     .form_field
       = f.label :fuel_type
-      %span.filter= f.select(:fuel, @fuel_type, {}, class: "form-control big-form")
+      %span.filter= f.select :fuel, options_for_select(@fuel_type), {include_blank: true}, {class: "form-control big-form", required: true}
     .form_field
       = f.label "Engine Displacement (cc)"
       %span.filter= f.number_field :cc, class: "form-control", autocomplete: "off", required: true
@@ -32,11 +32,32 @@
       %span.filter= f.number_field :power, class: "form-control", autocomplete: "off", required: true
     .form_field
       = f.label :transmition_type
-      %span.filter= f.select(:transmition, @transmition_type, {}, class: "form-control big-form")
+      %span.filter= f.select :transmition, options_for_select(@transmition_type), {include_blank: true}, {class: "form-control big-form", required: true }
     .form_field
       = f.label :gearbox_type
-      %span.filter= f.select(:gearbox, @gearbox_type, {}, class: "form-control big-form")
+      %span.filter= f.select :gearbox, options_for_select(@gearbox_type), {include_blank: true}, {class: "form-control big-form", required: true}
   %br
   = f.submit "Evaluate Car", class: "btn btn-primary"
 
 .evaluation
+
+:javascript
+  $("#brand-select").on("change", function(){
+    var brand = this.value
+    $("#model-select").empty()
+    if (brand == "") {
+      $("#model-select").prop( "disabled", true )
+    } else {
+      $("#model-select").prop( "disabled", false )
+      $("#model-select").append($('<option>', {
+                    value: "",
+                    text: ""
+                }));
+      $.each(gon.model[brand].sort(), function( index , value){
+        $("#model-select").append($('<option>', {
+                    value: value,
+                    text: value
+                }));
+      })
+    }
+  })
