@@ -51,13 +51,11 @@
                     value: "",
                     text: ""
                 }));
-      $.each(gon.model[brand], function( index , value){
+      $.each(gon.model[brand].sort(), function( index , value){
         $("#model-select").append($('<option>', {
                     value: value,
                     text: value
                 }));
       })
     }
-    
-
   })

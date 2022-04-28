@@ -17,10 +17,10 @@
       %span.filter= f.select :body, options_for_select(@body_type, @post.body), {}, class: "form-control big-form"
     .form_field
       = f.label :brand
-      %span.filter= f.select :brand, options_for_select(@brand, @post.brand), {}, class: "form-control big-form"
+      %span.filter= f.select :brand, options_for_select(@brand, @post.brand), {}, {class: "form-control big-form", id: "brand-select", required: true}
     .form_field
       = f.label :model
-      %span.filter= f.text_field :model, class: "form-control", autocomplete: "off"
+      %span.filter= f.select :model, options_for_select(@model[:"#{@post.brand}"], @post.model), {}, {class: "form-control big-form", id: "model-select", required: true}
     .form_field
       = f.label :year
       %span.filter= f.number_field :year, class: "form-control", autocomplete: "off", required: true
@@ -88,3 +88,23 @@
       reader.readAsDataURL(input.files[0]);
     }
   }
+
+  $("#brand-select").on("change", function(){
+    var brand = this.value
+    $("#model-select").empty()
+    if (brand == "") {
+      $("#model-select").prop( "disabled", true )
+    } else {
+      $("#model-select").prop( "disabled", false )
+      $("#model-select").append($('<option>', {
+                    value: "",
+                    text: ""
+                }));
+      $.each(gon.model[brand].sort(), function( index , value){
+        $("#model-select").append($('<option>', {
+                    value: value,
+                    text: value
+                }));
+      })
+    }
+  })
