@@ -18,8 +18,8 @@
           .mySlides
             .numbertext= "#{i + 1}/#{@post.images.size}"
             = image_tag(resize_to_fill(p,850, 500))
-        %a.prev_photto{:onclick => "plusSlides(-1)"} ❮
-        %a.next_photo{:onclick => "plusSlides(1)"} ❯
+        %a.prev.prev_photo{:onclick => "plusSlides(-1)"} ❮
+        %a.next.next_photo{:onclick => "plusSlides(1)"} ❯
       %br
       %div{ style: "text-align:center"}
         - @post.images.each_with_index do |p, i| 
