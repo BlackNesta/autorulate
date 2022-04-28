@@ -1,10 +1,10 @@
 = form_for(:specs, url: filter_posts_path, method: :get, local: true ,remote: true) do |f|
   
   = f.label :brand, style: "width: 112px"
-  %span.filter= f.select(:brand, @brand, {include_blank: true, value: params[:specs].try(:[], :brand)}, {class: "form-control"})
+  %span.filter= f.select(:brand, @brand, {include_blank: true, value: params[:specs].try(:[], :brand)}, {class: "form-control", id: "brand-select"})
 
   = f.label :model, style: "width: 112px"
-  %span.filter= f.text_field :model, class: "form-control", autocomplete: "off", value: params[:specs].try(:[], :model)
+  %span.filter= f.select(:model, [],{ include_blank: true, value: params[:specs].try(:[], :brand)}, {class: "form-control", id: "model-select", disabled: true })
 
   = f.label :body_type, style: "width: 112px"
   %span.filter= f.select(:body, @body_type, {include_blank: true, value: params[:specs].try(:[], :body)}, {class: "form-control"})
@@ -38,3 +38,26 @@
   %span.filter= f.number_field :max_horsepower, class: "form-control", autocomplete: "off", value: params[:specs].try(:[], :max_horsepower)
 
   = f.submit "Apply Filters", class: "btn btn-primary"
+
+:javascript
+  $("#brand-select").on("change", function(){
+    var brand = this.value
+    $("#model-select").empty()
+    if (brand == "") {
+      $("#model-select").prop( "disabled", true )
+    } else {
+      $("#model-select").prop( "disabled", false )
+      $("#model-select").append($('<option>', {
+                    value: "",
+                    text: ""
+                }));
+      $.each(gon.model[brand], function( index , value){
+        $("#model-select").append($('<option>', {
+                    value: value,
+                    text: value
+                }));
+      })
+    }
+    
+
+  })
