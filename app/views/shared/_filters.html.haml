@@ -1,41 +1,53 @@
 = form_for(:specs, url: filter_posts_path, method: :get, local: true ,remote: true) do |f|
-  
-  = f.label :brand, style: "width: 112px"
-  %span.filter= f.select(:brand, @brand, {include_blank: true, value: params[:specs].try(:[], :brand)}, {class: "form-control", id: "brand-select"})
+  .fitlers_column
+    = f.label :brand, style: "width: 112px"
+    %span.filter= f.select(:brand, @brand, {include_blank: true, value: params[:specs].try(:[], :brand)}, {class: "form-control", id: "brand-select"})
 
-  = f.label :model, style: "width: 112px"
-  %span.filter= f.select(:model, [],{ include_blank: true, value: params[:specs].try(:[], :brand)}, {class: "form-control", id: "model-select", disabled: true })
+    = f.label :model, style: "width: 112px"
+    %span.filter= f.select(:model, [],{ include_blank: true, value: params[:specs].try(:[], :brand)}, {class: "form-control", id: "model-select", disabled: true })
 
-  = f.label :body_type, style: "width: 112px"
-  %span.filter= f.select(:body, @body_type, {include_blank: true, value: params[:specs].try(:[], :body)}, {class: "form-control"})
+    = f.label :body_type, style: "width: 112px"
+    %span.filter= f.select(:body, @body_type, {include_blank: true, value: params[:specs].try(:[], :body)}, {class: "form-control"})
 
-  = f.label :fuel_type, style: "width: 112px"
-  %span.filter= f.select(:fuel, @fuel_type, {include_blank: true, value: params[:specs].try(:[], :fuel)}, {class: "form-control"})
+    = f.label :fuel_type, style: "width: 112px"
+    %span.filter= f.select(:fuel, @fuel_type, {include_blank: true, value: params[:specs].try(:[], :fuel)}, {class: "form-control"})
 
-  = f.label :transmition_type, style: "width: 112px;"
-  %span.filter= f.select(:transmition, @transmition_type, {include_blank: true, value: params[:specs].try(:[], :transmition)},  {class: "form-control"})
+    = f.label :transmition_type, style: "width: 112px;"
+    %span.filter= f.select(:transmition, @transmition_type, {include_blank: true, value: params[:specs].try(:[], :transmition)},  {class: "form-control"})
 
-  = f.label :gearbox_type, style: "width: 112px"
-  %span.filter= f.select(:gearbox, @gearbox_type, {include_blank: true, value: params[:specs].try(:[], :gearbox)}, {class: "form-control"})
+    = f.label :gearbox_type, style: "width: 112px"
+    %span.filter= f.select(:gearbox, @gearbox_type, {include_blank: true, value: params[:specs].try(:[], :gearbox)}, {class: "form-control"})
 
-  = f.label :min_year, style: "width: 112px"
-  %span.filter= f.number_field :min_year, class: "form-control", autocomplete: "off", value: params[:specs].try(:[], :min_year)
+    = f.label :min_year, style: "width: 112px"
+    %span.filter= f.number_field :min_year, class: "form-control", autocomplete: "off", value: params[:specs].try(:[], :min_year)
 
-  = f.label :max_year, style: "width: 112px"
-  %span.filter= f.number_field :max_year, class: "form-control", autocomplete: "off", value: params[:specs].try(:[], :max_year)
+    = f.label :max_year, style: "width: 112px"
+    %span.filter= f.number_field :max_year, class: "form-control", autocomplete: "off", value: params[:specs].try(:[], :max_year)
 
-  = f.label :min_cc, style: "width: 112px"
-  %span.filter= f.number_field :min_cc, class: "form-control", autocomplete: "off", value: params[:specs].try(:[], :min_cc)
+    = f.label :min_cc, style: "width: 112px"
+    %span.filter= f.number_field :min_cc, class: "form-control", autocomplete: "off", value: params[:specs].try(:[], :min_cc)
 
-  = f.label :max_cc, style: "width: 112px"
-  %span.filter= f.number_field :max_cc, class: "form-control", autocomplete: "off", value: params[:specs].try(:[], :max_cc)
+    = f.label :max_cc, style: "width: 112px"
+    %span.filter= f.number_field :max_cc, class: "form-control", autocomplete: "off", value: params[:specs].try(:[], :max_cc)
 
 
-  = f.label :min_horsepower, style: "width: 112px"
-  %span.filter= f.number_field :min_horsepower, class: "form-control", autocomplete: "off", value: params[:specs].try(:[], :min_horsepower)
+    = f.label :min_horsepower, style: "width: 112px"
+    %span.filter= f.number_field :min_horsepower, class: "form-control", autocomplete: "off", value: params[:specs].try(:[], :min_horsepower)
 
-  = f.label :max_horsepower, style: "width: 112px"
-  %span.filter= f.number_field :max_horsepower, class: "form-control", autocomplete: "off", value: params[:specs].try(:[], :max_horsepower)
+    = f.label :max_horsepower, style: "width: 112px"
+    %span.filter= f.number_field :max_horsepower, class: "form-control", autocomplete: "off", value: params[:specs].try(:[], :max_horsepower)
+
+    = f.label :min_km, style: "width: 112px"
+    %span.filter= f.number_field :min_km, class: "form-control", autocomplete: "off", value: params[:specs].try(:[], :min_km)
+
+    = f.label :max_km, style: "width: 112px"
+    %span.filter= f.number_field :max_km, class: "form-control", autocomplete: "off", value: params[:specs].try(:[], :max_km)
+
+    = f.label :min_price, style: "width: 112px"
+    %span.filter= f.number_field :min_price, class: "form-control", autocomplete: "off", value: params[:specs].try(:[], :min_price)
+
+    = f.label :max_price, style: "width: 112px"
+    %span.filter= f.number_field :max_price, class: "form-control", autocomplete: "off", value: params[:specs].try(:[], :max_price)
 
   = f.submit "Apply Filters", class: "btn btn-primary"
 

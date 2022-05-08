@@ -66,6 +66,10 @@ class PostsController < ApplicationController
     @feed_items = @feed_items.where('cc <= ?', filter[:max_cc]) if filter[:max_cc].present?
     @feed_items = @feed_items.where('power >= ?', filter[:min_horsepower])  if filter[:min_horsepower].present?
     @feed_items = @feed_items.where('power <= ?', filter[:max_horsepower])  if filter[:max_horsepower].present?
+    @feed_items = @feed_items.where('mileage >= ?', filter[:min_km])  if filter[:min_km].present?
+    @feed_items = @feed_items.where('mileage <= ?', filter[:max_km])  if filter[:max_km].present?
+    @feed_items = @feed_items.where('price >= ?', filter[:min_price])  if filter[:min_price].present?
+    @feed_items = @feed_items.where('price <= ?', filter[:max_price])  if filter[:max_price].present?
     @feed_items = @feed_items.paginate(page: params[:page])
   end
 
